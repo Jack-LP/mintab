@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/nuTab/static/css/main.dd55ec5b.css",
+    "main.js": "/nuTab/static/js/main.8270d892.js",
+    "static/js/377.3b1a9d70.chunk.js": "/nuTab/static/js/377.3b1a9d70.chunk.js",
+    "static/media/space-mono-all-400-normal.woff": "/nuTab/static/media/space-mono-all-400-normal.e06054fa861d3688228f.woff",
+    "static/media/space-mono-latin-400-normal.woff2": "/nuTab/static/media/space-mono-latin-400-normal.332709685022fe85ce8a.woff2",
+    "static/media/space-mono-latin-ext-400-normal.woff2": "/nuTab/static/media/space-mono-latin-ext-400-normal.f115f165d0cf160a0f0a.woff2",
+    "static/media/space-mono-vietnamese-400-normal.woff2": "/nuTab/static/media/space-mono-vietnamese-400-normal.607a568ae2c04bc91877.woff2",
+    "index.html": "/nuTab/index.html",
+    "main.dd55ec5b.css.map": "/nuTab/static/css/main.dd55ec5b.css.map",
+    "main.8270d892.js.map": "/nuTab/static/js/main.8270d892.js.map",
+    "377.3b1a9d70.chunk.js.map": "/nuTab/static/js/377.3b1a9d70.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd55ec5b.css",
+    "static/js/main.8270d892.js"
+  ]
+}
