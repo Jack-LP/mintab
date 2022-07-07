@@ -2,7 +2,7 @@
   "name": "chakra-tab",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://jack-lp.github.io/nuTab",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/react": "^2.2.1",
