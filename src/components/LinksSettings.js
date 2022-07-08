@@ -47,11 +47,9 @@ const AddLinks = ({ linksArray, setLinksArray }) => {
 
   // Remove Links
 
-  const [linkId, setLinkId] = useState();
-
-  function removeLink(e) {
-    setLinkId(parseInt(e.target.getAttribute('id')));
-    setLinksArray(linksArray.filter(link => link.id !== linkId));
+  function removeLink(id) {
+    console.log(id, typeof id);
+    setLinksArray(linksArray.filter(link => link.id !== id));
   }
 
   const linkList = linksArray.map(link => (
@@ -63,7 +61,12 @@ const AddLinks = ({ linksArray, setLinksArray }) => {
       py="1"
     >
       {link.url}
-      <IconButton size="sm" onClick={removeLink} id={link.id} bg="transparent">
+      <IconButton
+        size="sm"
+        bg="transparent"
+        aria-label="delete link"
+        onClick={() => removeLink(link.id)}
+      >
         <DeleteIcon />
       </IconButton>
     </Tag>

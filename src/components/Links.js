@@ -1,27 +1,32 @@
 import React from 'react';
-import { HStack, IconButton } from '@chakra-ui/react';
+import { HStack, IconButton, Box } from '@chakra-ui/react';
 
 const Links = ({ linksArray }) => {
   const itemArray = linksArray.map(link => (
-    <IconButton
-      variant="outline"
-      size="lg"
-      borderWidth="2px"
+    <a
       key={link.id}
-      style={{ marginInlineStart: '0' }}
+      w="100%"
+      h="100%"
+      href={
+        link.url.includes('http://' || 'https://')
+          ? link.url
+          : `https://www.${link.url}`
+      }
     >
-      <a
-        href={
-          link.url.includes('http://' || 'https://')
-            ? link.url
-            : `https://www.${link.url}`
-        }
+      <IconButton
+        variant="outline"
+        size="lg"
+        borderWidth="2px"
+        key={link.id}
+        style={{ marginInlineStart: '0' }}
       >
-        {Array.from(
-          link.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('.')[0]
-        )[0].toUpperCase()}
-      </a>
-    </IconButton>
+        <Box>
+          {Array.from(
+            link.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('.')[0]
+          )[0].toUpperCase()}
+        </Box>
+      </IconButton>
+    </a>
   ));
 
   return (
