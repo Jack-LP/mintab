@@ -1,8 +1,8 @@
 {
-  "name": "chakra-tab",
+  "name": "mintab",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jack-lp.github.io/nuTab",
+  "homepage": "https://jack-lp.github.io/mintab",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.2",
     "@chakra-ui/react": "^2.2.1",

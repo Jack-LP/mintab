@@ -7,7 +7,9 @@ import {
   DrawerHeader,
   DrawerBody,
   VStack,
+  Box,
 } from '@chakra-ui/react';
+import { ReactComponent as Logo } from '../img/mintab-light.svg';
 import LinksSettings from './LinksSettings';
 import WallpaperSettings from './WallpaperSettings';
 import SetCustomGreeting from './SetCustomGreeting';
@@ -33,11 +35,17 @@ const SettingsDrawer = ({
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
       <DrawerContent bg="#00000030" backdropFilter="blur(8px)">
-        <DrawerHeader borderBottomWidth="1px">
-          <DrawerCloseButton mt="2" />
-          Settings
-        </DrawerHeader>
-        <DrawerBody style={{ scrollbarWidth: 'none' }}>
+        <Box
+          w="100%"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          borderBottomWidth="1px"
+          p="5"
+        >
+          <Logo width="150px" height="30px" />
+        </Box>
+        <DrawerBody style={{ scrollbarWidth: 'none' }} mt="5">
           <Stack spacing="10">
             <VStack alignItems="flex-start">
               <LinksSettings
