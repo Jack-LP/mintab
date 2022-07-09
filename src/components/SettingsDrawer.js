@@ -3,8 +3,6 @@ import {
   Stack,
   Drawer,
   DrawerContent,
-  DrawerCloseButton,
-  DrawerHeader,
   DrawerBody,
   VStack,
   Box,
