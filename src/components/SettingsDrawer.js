@@ -32,7 +32,7 @@ const SettingsDrawer = ({
 }) => {
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
-      <DrawerContent bg="#00000030">
+      <DrawerContent bg="#00000030" backdropFilter="blur(8px)">
         <DrawerHeader borderBottomWidth="1px">
           <DrawerCloseButton mt="2" />
           Settings

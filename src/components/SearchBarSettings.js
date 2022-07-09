@@ -45,7 +45,7 @@ const SearchBarSettings = ({
           <PopoverTrigger>
             <Button>Select Color</Button>
           </PopoverTrigger>
-          <PopoverContent w="230px" bg="#00000030">
+          <PopoverContent w="230px" bg="#00000030" backdropFilter="blur(8px)">
             <PopoverArrow bg="#00000030" />
             <PopoverBody display="flex" justifyContent="center">
               <HexColorPicker
