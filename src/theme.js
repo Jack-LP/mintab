@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   fonts: {
-    mono: `'Space Mono', monospace`,
+    mono: `'Overpass Mono', monospace`,
     body: `Inter, sans-serif`,
   },
   colors: {
