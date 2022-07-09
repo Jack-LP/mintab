@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h1>mintab</h1>
+  <img src="https://i.imgur.com/xrPi7KZ.png" width="400px" />
 </div>
 
 <!-- TABLE OF CONTENTS -->
