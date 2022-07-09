@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h1>nuTab</h1>
+  <h1>mintab</h1>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -25,7 +25,7 @@
 
 ![site-screenshot](https://i.imgur.com/oZbErPM.png)
 
-The purpose of nuTab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox.
+The purpose of mintab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -33,7 +33,7 @@ The purpose of nuTab is to act as a customisable homepage for your browser, prov
 
 ## Live Site
 
-[Click here to view the site live](https://jack-lp.github.io/nuTab/)
+[Click here to view the site live](https://jack-lp.github.io/mintab/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -65,7 +65,7 @@ The settings drawer contains the ability to:
 
 Jack Paget - <a href="mailto:jackpaget1@gmail.com">jackpaget1@gmail.com</a>
 
-Project Link: [nuTab](https://github.com/Jack-LP/nuTab)
+Project Link: [mintab](https://github.com/Jack-LP/mintab)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
