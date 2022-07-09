@@ -18,6 +18,7 @@ const SettingsDrawer = ({
   onClose,
   linksArray,
   setLinksArray,
+  wallpaper,
   setWallpaper,
   greeting,
   setGreeting,
@@ -29,6 +30,8 @@ const SettingsDrawer = ({
   setEngine,
   searchColor,
   setSearchColor,
+  bgColor,
+  setBgColor,
 }) => {
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -52,11 +55,14 @@ const SettingsDrawer = ({
               />
             </VStack>
             <WallpaperSettings
+              wallpaper={wallpaper}
               setWallpaper={setWallpaper}
               setBrightness={setBrightness}
               brightness={brightness}
               blur={blur}
               setBlur={setBlur}
+              bgColor={bgColor}
+              setBgColor={setBgColor}
             />
             <SetCustomGreeting greeting={greeting} setGreeting={setGreeting} />
             <SearchBarSettings

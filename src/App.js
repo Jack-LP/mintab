@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '@fontsource/space-mono/400.css';
-import { ChakraProvider, Box, VStack } from '@chakra-ui/react';
+import { Box, VStack } from '@chakra-ui/react';
 import theme from './theme';
 import Wallpaper from './components/Wallpaper';
 import Clock from './components/Clock';
@@ -15,8 +15,11 @@ function App() {
   );
 
   const [wallpaper, setWallpaper] = useState(
-    localStorage.getItem('wallpaperStorage') ||
-      'https://i.imgur.com/4GsPuXt.jpg'
+    localStorage.getItem('wallpaperStorage') || ''
+  );
+
+  const [bgColor, setBgColor] = useState(
+    localStorage.getItem('bgColorStorage') || '#282828'
   );
 
   const [greeting, setGreeting] = useState(
@@ -52,46 +55,43 @@ function App() {
   );
 
   return (
-    <ChakraProvider theme={theme}>
-      <Box
-        w="100vw"
-        h="100vh"
-        bg="transparent"
-        color="white"
-        fontSize="30"
-        alignItems="center"
-        justifyContent="center"
-        display="flex"
-        fontFamily="fonts.mono"
-      >
-        <Wallpaper
-          wallpaperSrc={wallpaper}
+    <Box
+      w="100vw"
+      h="100vh"
+      bg={wallpaper === '' ? `${bgColor}` : 'transparent'}
+      color="white"
+      fontSize="30"
+      alignItems="center"
+      justifyContent="center"
+      display="flex"
+      fontFamily="fonts.mono"
+    >
+      <Wallpaper wallpaperSrc={wallpaper} brightness={brightness} blur={blur} />
+      <VStack>
+        <Clock />
+        <CustomGreeting greeting={greeting} />
+        <SearchBar engine={engine} searchColor={searchColor} />
+        <Links linksArray={linksArray} />
+        <Settings
+          linksArray={linksArray}
+          setLinksArray={setLinksArray}
+          wallpaper={wallpaper}
+          setWallpaper={setWallpaper}
+          greeting={greeting}
+          setGreeting={setGreeting}
           brightness={brightness}
+          setBrightness={setBrightness}
           blur={blur}
+          setBlur={setBlur}
+          engine={engine}
+          setEngine={setEngine}
+          searchColor={searchColor}
+          setSearchColor={setSearchColor}
+          bgColor={bgColor}
+          setBgColor={setBgColor}
         />
-        <VStack>
-          <Clock />
-          <CustomGreeting greeting={greeting} />
-          <SearchBar engine={engine} searchColor={searchColor} />
-          <Links linksArray={linksArray} />
-          <Settings
-            linksArray={linksArray}
-            setLinksArray={setLinksArray}
-            setWallpaper={setWallpaper}
-            greeting={greeting}
-            setGreeting={setGreeting}
-            brightness={brightness}
-            setBrightness={setBrightness}
-            blur={blur}
-            setBlur={setBlur}
-            engine={engine}
-            setEngine={setEngine}
-            searchColor={searchColor}
-            setSearchColor={setSearchColor}
-          />
-        </VStack>
-      </Box>
-    </ChakraProvider>
+      </VStack>
+    </Box>
   );
 }
 

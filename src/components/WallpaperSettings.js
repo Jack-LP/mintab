@@ -6,18 +6,26 @@ import {
   Input,
   IconButton,
   useToast,
+  Tag,
+  Box,
 } from '@chakra-ui/react';
-import { AddIcon } from '@chakra-ui/icons/';
+import { AddIcon, DeleteIcon, DownloadIcon } from '@chakra-ui/icons/';
 import CustomSlider from './CustomSlider';
+import ColorSelect from './ColorSelect';
 
 const AddWallpaper = ({
+  wallpaper,
   setWallpaper,
   setBrightness,
   brightness,
   blur,
   setBlur,
+  bgColor,
+  setBgColor,
 }) => {
-  const imgPattern = new RegExp(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/);
+  const imgPattern = new RegExp(
+    /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/
+  );
   const toast = useToast();
   const [wallpaperEntry, setWallpaperEntry] = useState('');
 
@@ -38,7 +46,7 @@ const AddWallpaper = ({
       toast({
         position: 'bottom-left',
         title: 'Wallpaper changed',
-        status: 'success',
+        status: 'info',
         variant: 'left-accent',
         duration: 1000,
         isClosable: false,
@@ -51,7 +59,7 @@ const AddWallpaper = ({
   return (
     <Stack spacing="2">
       <Heading size="md">Wallpaper</Heading>
-      <Stack spacing="6">
+      <Stack spacing={wallpaper === '' ? '2' : '4'}>
         <FormControl display="flex" gap="4">
           <Input
             value={wallpaperEntry}
@@ -63,14 +71,68 @@ const AddWallpaper = ({
             <AddIcon />
           </IconButton>
         </FormControl>
+        <Tag
+          display={wallpaper === '' ? 'none' : 'flex'}
+          flexDirection="column"
+          w="100%"
+          alignItems="center"
+          p="2"
+          gap="2"
+        >
+          <Box display="flex" alignItems="center">
+            <img
+              src={wallpaper}
+              alt="Wallpaper preview"
+              style={{
+                borderRadius: '12px',
+                width: '250px',
+                height: '145px',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+          <Box display="flex" gap="2" w="100%">
+            <a
+              href={`http://localhost:3000/mintab/${wallpaper}`}
+              download="mintab-wallpaper"
+              style={{ width: '100%' }}
+            >
+              <IconButton variant="outline" w="100%" bg="transparent">
+                <DownloadIcon />
+              </IconButton>
+            </a>
+            <IconButton
+              variant="outline"
+              w="100%"
+              onClick={() => setWallpaper('')}
+              bg="transparent"
+            >
+              <DeleteIcon />
+            </IconButton>
+          </Box>
+        </Tag>
         <Stack spacing="2">
           <CustomSlider
+            wallpaper={wallpaper}
             value={brightness}
             setValue={setBrightness}
             heading={'Brightness'}
           />
-          <CustomSlider value={blur} setValue={setBlur} heading={'Blur'} />
+          <CustomSlider
+            wallpaper={wallpaper}
+            value={blur}
+            setValue={setBlur}
+            heading={'Blur'}
+          />
         </Stack>
+        {wallpaper === '' ? (
+          <ColorSelect
+            color={bgColor}
+            setColor={setBgColor}
+            title={'Background Color'}
+            wallpaper={wallpaper}
+          />
+        ) : null}
       </Stack>
     </Stack>
   );

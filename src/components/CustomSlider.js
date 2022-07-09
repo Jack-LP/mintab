@@ -6,13 +6,14 @@ import {
   Tooltip,
   SliderThumb,
   Heading,
+  Box,
 } from '@chakra-ui/react';
 
-const CustomSlider = ({ value, setValue, heading }) => {
+const CustomSlider = ({ value, setValue, heading, wallpaper }) => {
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
-    <>
+    <Box display={wallpaper === '' ? 'none' : 'block'}>
       <Heading size="sm">{heading}</Heading>
       <Slider
         defaultValue={value * 100}
@@ -34,7 +35,7 @@ const CustomSlider = ({ value, setValue, heading }) => {
           <SliderThumb />
         </Tooltip>
       </Slider>
-    </>
+    </Box>
   );
 };
 

@@ -48,7 +48,6 @@ const AddLinks = ({ linksArray, setLinksArray }) => {
   // Remove Links
 
   function removeLink(id) {
-    console.log(id, typeof id);
     setLinksArray(linksArray.filter(link => link.id !== id));
   }
 
@@ -92,7 +91,6 @@ const AddLinks = ({ linksArray, setLinksArray }) => {
         flexDirection="column"
         gap={2}
         w="100%"
-        paddingLeft="1"
       >
         {linkList}
       </UnorderedList>

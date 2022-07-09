@@ -1,17 +1,6 @@
 import React from 'react';
-import {
-  Stack,
-  Heading,
-  RadioGroup,
-  Radio,
-  Popover,
-  PopoverTrigger,
-  Button,
-  PopoverContent,
-  PopoverArrow,
-  PopoverBody,
-} from '@chakra-ui/react';
-import { HexColorPicker } from 'react-colorful';
+import { Stack, Heading, RadioGroup, Radio } from '@chakra-ui/react';
+import ColorSelect from './ColorSelect';
 
 const SearchBarSettings = ({
   engine,
@@ -41,20 +30,11 @@ const SearchBarSettings = ({
             DuckDuckGo
           </Radio>
         </RadioGroup>
-        <Popover placement="left">
-          <PopoverTrigger>
-            <Button>Select Color</Button>
-          </PopoverTrigger>
-          <PopoverContent w="230px" bg="#00000030" backdropFilter="blur(8px)">
-            <PopoverArrow bg="#00000030" />
-            <PopoverBody display="flex" justifyContent="center">
-              <HexColorPicker
-                color={searchColor}
-                onChange={color => setSearchColor(color)}
-              />
-            </PopoverBody>
-          </PopoverContent>
-        </Popover>
+        <ColorSelect
+          color={searchColor}
+          setColor={setSearchColor}
+          title="Search Bar Color"
+        />
       </Stack>
     </Stack>
   );

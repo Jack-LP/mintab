@@ -6,6 +6,7 @@ import SettingsDrawer from './SettingsDrawer';
 const Settings = ({
   linksArray,
   setLinksArray,
+  wallpaper,
   setWallpaper,
   greeting,
   setGreeting,
@@ -17,6 +18,8 @@ const Settings = ({
   setEngine,
   searchColor,
   setSearchColor,
+  bgColor,
+  setBgColor,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -28,6 +31,7 @@ const Settings = ({
         onClose={onClose}
         linksArray={linksArray}
         setLinksArray={setLinksArray}
+        wallpaper={wallpaper}
         setWallpaper={setWallpaper}
         setGreeting={setGreeting}
         setBrightness={setBrightness}
@@ -39,6 +43,8 @@ const Settings = ({
         searchColor={searchColor}
         setSearchColor={setSearchColor}
         greeting={greeting}
+        bgColor={bgColor}
+        setBgColor={setBgColor}
       />
     </>
   );

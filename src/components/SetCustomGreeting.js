@@ -28,10 +28,6 @@ const SetCustomGreeting = ({ greeting, setGreeting }) => {
     setGreetingEntry('');
   }
 
-  function deleteGreeting() {
-    setGreeting('');
-  }
-
   return (
     <VStack spacing="2" alignItems="flex-start">
       <Heading size="md">Custom Greeting</Heading>
@@ -57,7 +53,7 @@ const SetCustomGreeting = ({ greeting, setGreeting }) => {
         <Box maxW="85%" overflowWrap="normal" overflow="hidden">
           {greeting}
         </Box>
-        <IconButton onClick={deleteGreeting} bg="transparent">
+        <IconButton onClick={() => setGreeting('')} bg="transparent">
           <DeleteIcon />
         </IconButton>
       </Tag>
