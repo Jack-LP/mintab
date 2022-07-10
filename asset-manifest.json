@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/mintab/static/css/main.6dc18921.css",
-    "main.js": "/mintab/static/js/main.89bc0aff.js",
+    "main.js": "/mintab/static/js/main.1a0a0696.js",
     "static/js/377.a59e64a9.chunk.js": "/mintab/static/js/377.a59e64a9.chunk.js",
-    "static/media/space-mono-all-400-normal.woff": "/mintab/static/media/space-mono-all-400-normal.e06054fa861d3688228f.woff",
-    "static/media/space-mono-latin-400-normal.woff2": "/mintab/static/media/space-mono-latin-400-normal.332709685022fe85ce8a.woff2",
-    "static/media/space-mono-latin-ext-400-normal.woff2": "/mintab/static/media/space-mono-latin-ext-400-normal.f115f165d0cf160a0f0a.woff2",
-    "static/media/space-mono-vietnamese-400-normal.woff2": "/mintab/static/media/space-mono-vietnamese-400-normal.607a568ae2c04bc91877.woff2",
     "static/media/mintab-light.svg": "/mintab/static/media/mintab-light.29d1ebad42354c0a30a7efd37b79c4cb.svg",
     "index.html": "/mintab/index.html",
-    "main.6dc18921.css.map": "/mintab/static/css/main.6dc18921.css.map",
-    "main.89bc0aff.js.map": "/mintab/static/js/main.89bc0aff.js.map",
+    "main.1a0a0696.js.map": "/mintab/static/js/main.1a0a0696.js.map",
     "377.a59e64a9.chunk.js.map": "/mintab/static/js/377.a59e64a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6dc18921.css",
-    "static/js/main.89bc0aff.js"
+    "static/js/main.1a0a0696.js"
   ]
 }
