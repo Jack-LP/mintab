@@ -8,8 +8,8 @@ const Settings = ({
   setLinksArray,
   wallpaper,
   setWallpaper,
-  greeting,
-  setGreeting,
+  username,
+  setUsername,
   setBrightness,
   brightness,
   blur,
@@ -20,6 +20,8 @@ const Settings = ({
   setSearchColor,
   bgColor,
   setBgColor,
+  clockFormat,
+  setClockFormat,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -33,7 +35,7 @@ const Settings = ({
         setLinksArray={setLinksArray}
         wallpaper={wallpaper}
         setWallpaper={setWallpaper}
-        setGreeting={setGreeting}
+        setUsername={setUsername}
         setBrightness={setBrightness}
         brightness={brightness}
         blur={blur}
@@ -42,9 +44,11 @@ const Settings = ({
         setEngine={setEngine}
         searchColor={searchColor}
         setSearchColor={setSearchColor}
-        greeting={greeting}
+        username={username}
         bgColor={bgColor}
         setBgColor={setBgColor}
+        clockFormat={clockFormat}
+        setClockFormat={setClockFormat}
       />
     </>
   );

@@ -1,18 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Spinner } from '@chakra-ui/react';
+import { useEffect } from 'react';
 
-const Clock = () => {
+const Clock = ({ clockFormat }) => {
   const [clockState, setClockState] = useState('');
 
+  const date = new Date();
+
   useEffect(() => {
-    setInterval(() => {
-      const date = new Date();
-      setClockState(date.toLocaleTimeString('en-GB').slice(0, -3));
-    }, 1000);
-  }, []);
+    setInterval(
+      (function displayTime() {
+        setClockState(
+          date.toLocaleTimeString(`${clockFormat}`, {
+            hour: '2-digit',
+            minute: '2-digit',
+          })
+        );
+      })(),
+      1000
+    );
+  });
 
   return (
-    <Box fontSize="96" fontFamily="mono" mb="-5">
+    <Box fontSize="96" mb="-5" fontFamily="mono">
       {clockState === '' ? <Spinner size="lg" mb="2.5" /> : clockState}
     </Box>
   );

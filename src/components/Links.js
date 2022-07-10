@@ -5,21 +5,14 @@ const Links = ({ linksArray }) => {
   const itemArray = linksArray.map(link => (
     <a
       key={link.id}
-      w="100%"
-      h="100%"
       href={
         link.url.includes('http://' || 'https://')
           ? link.url
           : `https://www.${link.url}`
       }
+      style={{ margin: '0' }}
     >
-      <IconButton
-        variant="outline"
-        size="lg"
-        borderWidth="2px"
-        key={link.id}
-        style={{ marginInlineStart: '0' }}
-      >
+      <IconButton variant="outline" size="lg" borderWidth="2px" key={link.id}>
         <Box>
           {Array.from(
             link.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('.')[0]

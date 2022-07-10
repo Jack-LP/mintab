@@ -1,22 +1,38 @@
 import React from 'react';
-import { Input, InputGroup, InputRightElement } from '@chakra-ui/react';
+import {
+  Input,
+  InputGroup,
+  InputRightElement,
+  IconButton,
+} from '@chakra-ui/react';
 import { Duckduckgo, Google } from '@icons-pack/react-simple-icons';
 
-const SearchBar = ({ engine, searchColor }) => {
+const SearchBar = ({ engine, setEngine, searchColor }) => {
   return (
     <form action={engine} target="_self">
       <InputGroup>
         <InputRightElement
           children={
-            engine === 'http://google.com/search' ? (
-              <Google color="#ffffff30" size={28} />
-            ) : (
-              <Duckduckgo color="#ffffff30" size={28} />
-            )
+            <IconButton
+              children={
+                engine === 'http://google.com/search' ? (
+                  <Google color="#ffffff20" size={28} />
+                ) : (
+                  <Duckduckgo color="#ffffff20" size={28} />
+                )
+              }
+              onClick={() =>
+                setEngine(
+                  engine === 'http://google.com/search'
+                    ? 'https://duckduckgo.com/?q='
+                    : 'http://google.com/search'
+                )
+              }
+              variant="unstyled"
+            ></IconButton>
           }
-          pointerEvents=""
           mt="1"
-          mr="1"
+          mr="-3"
         />
         <Input
           placeholder="Search"

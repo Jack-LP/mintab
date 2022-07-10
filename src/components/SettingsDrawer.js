@@ -10,8 +10,9 @@ import {
 import { ReactComponent as Logo } from '../img/mintab-light.svg';
 import LinksSettings from './LinksSettings';
 import WallpaperSettings from './WallpaperSettings';
-import SetCustomGreeting from './SetCustomGreeting';
+import GreetingSettings from './GreetingSettings';
 import SearchBarSettings from './SearchBarSettings';
+import ClockSettings from './ClockSettings';
 
 const SettingsDrawer = ({
   isOpen,
@@ -20,8 +21,8 @@ const SettingsDrawer = ({
   setLinksArray,
   wallpaper,
   setWallpaper,
-  greeting,
-  setGreeting,
+  username,
+  setUsername,
   setBrightness,
   brightness,
   blur,
@@ -32,6 +33,8 @@ const SettingsDrawer = ({
   setSearchColor,
   bgColor,
   setBgColor,
+  clockFormat,
+  setClockFormat,
 }) => {
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -48,6 +51,10 @@ const SettingsDrawer = ({
         </Box>
         <DrawerBody style={{ scrollbarWidth: 'none' }} mt="5">
           <Stack spacing="10">
+            <ClockSettings
+              clockFormat={clockFormat}
+              setClockFormat={setClockFormat}
+            />
             <VStack alignItems="flex-start">
               <LinksSettings
                 linksArray={linksArray}
@@ -64,7 +71,7 @@ const SettingsDrawer = ({
               bgColor={bgColor}
               setBgColor={setBgColor}
             />
-            <SetCustomGreeting greeting={greeting} setGreeting={setGreeting} />
+            <GreetingSettings username={username} setUsername={setUsername} />
             <SearchBarSettings
               engine={engine}
               setEngine={setEngine}

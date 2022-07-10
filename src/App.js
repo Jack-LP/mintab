@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '@fontsource/space-mono/400.css';
 import { Box, VStack } from '@chakra-ui/react';
 import theme from './theme';
 import Wallpaper from './components/Wallpaper';
@@ -7,7 +6,7 @@ import Clock from './components/Clock';
 import SearchBar from './components/SearchBar';
 import Links from './components/Links';
 import Settings from './components/Settings';
-import CustomGreeting from './components/CustomGreeting';
+import Greeting from './components/Greeting';
 
 function App() {
   const [linksArray, setLinksArray] = useState(
@@ -22,8 +21,8 @@ function App() {
     localStorage.getItem('bgColorStorage') || '#282828'
   );
 
-  const [greeting, setGreeting] = useState(
-    localStorage.getItem('greetingStorage') || ''
+  const [username, setUsername] = useState(
+    localStorage.getItem('username') || ''
   );
 
   const [brightness, setBrightness] = useState(
@@ -40,19 +39,32 @@ function App() {
     localStorage.getItem('searchColor') || '#ffffff'
   );
 
-  useEffect(
-    () => {
-      localStorage.setItem('linkStorage', JSON.stringify(linksArray));
-    },
-    [linksArray],
-    localStorage.setItem('wallpaperStorage', wallpaper),
-    localStorage.setItem('greetingStorage', greeting),
-    localStorage.setItem('brightness', brightness),
-    localStorage.setItem('blur', blur),
-    localStorage.setItem('engine', engine),
-    localStorage.setItem('searchColor', searchColor),
-    localStorage.setItem('chakra-ui-color-mode', theme.initialColorMode)
+  const [clockFormat, setClockFormat] = useState(
+    localStorage.getItem('clockFormat') || 'en-GB'
   );
+
+  useEffect(() => {
+    localStorage.setItem('linkStorage', JSON.stringify(linksArray));
+    localStorage.setItem('wallpaperStorage', wallpaper);
+    localStorage.setItem('bgColorStorage', bgColor);
+    localStorage.setItem('username', username);
+    localStorage.setItem('brightness', brightness);
+    localStorage.setItem('blur', blur);
+    localStorage.setItem('engine', engine);
+    localStorage.setItem('searchColor', searchColor);
+    localStorage.setItem('clockFormat', clockFormat);
+    localStorage.setItem('chakra-ui-color-mode', theme.initialColorMode);
+  }, [
+    linksArray,
+    wallpaper,
+    username,
+    brightness,
+    blur,
+    engine,
+    searchColor,
+    bgColor,
+    clockFormat,
+  ]);
 
   return (
     <Box
@@ -64,21 +76,24 @@ function App() {
       alignItems="center"
       justifyContent="center"
       display="flex"
-      fontFamily="fonts.mono"
     >
       <Wallpaper wallpaperSrc={wallpaper} brightness={brightness} blur={blur} />
       <VStack>
-        <Clock />
-        <CustomGreeting greeting={greeting} />
-        <SearchBar engine={engine} searchColor={searchColor} />
+        <Clock clockFormat={clockFormat} />
+        <Greeting username={username} />
+        <SearchBar
+          engine={engine}
+          setEngine={setEngine}
+          searchColor={searchColor}
+        />
         <Links linksArray={linksArray} />
         <Settings
           linksArray={linksArray}
           setLinksArray={setLinksArray}
           wallpaper={wallpaper}
           setWallpaper={setWallpaper}
-          greeting={greeting}
-          setGreeting={setGreeting}
+          username={username}
+          setUsername={setUsername}
           brightness={brightness}
           setBrightness={setBrightness}
           blur={blur}
@@ -89,6 +104,8 @@ function App() {
           setSearchColor={setSearchColor}
           bgColor={bgColor}
           setBgColor={setBgColor}
+          clockFormat={clockFormat}
+          setClockFormat={setClockFormat}
         />
       </VStack>
     </Box>

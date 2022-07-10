@@ -10,50 +10,49 @@ import {
 } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon } from '@chakra-ui/icons';
 
-const SetCustomGreeting = ({ greeting, setGreeting }) => {
-  const [greetingEntry, setGreetingEntry] = useState('');
+const GreetingSettings = ({ username, setUsername }) => {
+  const [usernameEntry, setUsernameEntry] = useState('');
 
   function handleKeyDown(e) {
     if (e.key === 'Enter') {
-      addGreeting();
+      addUsername();
     }
   }
 
-  function greetingChange(event) {
-    setGreetingEntry(event.target.value);
+  function usernameChange(event) {
+    setUsernameEntry(event.target.value);
   }
 
-  function addGreeting() {
-    setGreeting(greetingEntry);
-    setGreetingEntry('');
+  function addUsername() {
+    setUsername(usernameEntry);
+    setUsernameEntry('');
   }
-
   return (
     <VStack spacing="2" alignItems="flex-start">
-      <Heading size="md">Custom Greeting</Heading>
+      <Heading size="md">Greeting</Heading>
       <FormControl display="flex" gap="4">
         <Input
-          value={greetingEntry}
-          placeholder="Add Greeting"
-          onChange={greetingChange}
+          value={usernameEntry}
+          placeholder="Enter name"
+          onChange={usernameChange}
           onKeyDown={handleKeyDown}
-          maxLength={40}
+          maxLength={10}
         ></Input>
-        <IconButton onClick={addGreeting}>
+        <IconButton onClick={addUsername}>
           <AddIcon />
         </IconButton>
       </FormControl>
       <Tag
-        display={greeting === '' ? 'none' : 'flex'}
+        display={username === '' ? 'none' : 'flex'}
         alignItems="center"
         justifyContent="space-between"
         w="100%"
         py="1"
       >
         <Box maxW="85%" overflowWrap="normal" overflow="hidden">
-          {greeting}
+          {username}
         </Box>
-        <IconButton onClick={() => setGreeting('')} bg="transparent">
+        <IconButton onClick={() => setUsername('')} bg="transparent">
           <DeleteIcon />
         </IconButton>
       </Tag>
@@ -61,4 +60,4 @@ const SetCustomGreeting = ({ greeting, setGreeting }) => {
   );
 };
 
-export default SetCustomGreeting;
+export default GreetingSettings;
