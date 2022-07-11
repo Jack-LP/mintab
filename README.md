@@ -25,7 +25,7 @@
 
 ![site-screenshot](https://i.imgur.com/oZbErPM.png)
 
-The purpose of mintab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox.
+The purpose of mintab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox. Inspired by [Tabliss](https://github.com/joelshepherd/tabliss)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
