@@ -43,6 +43,10 @@ function App() {
     localStorage.getItem('clockFormat') || 'en-GB'
   );
 
+  const [useIcon, setUseIcon] = useState(
+    localStorage.getItem('useIcon') || true
+  );
+
   useEffect(() => {
     localStorage.setItem('linkStorage', JSON.stringify(linksArray));
     localStorage.setItem('wallpaperStorage', wallpaper);
@@ -53,6 +57,7 @@ function App() {
     localStorage.setItem('engine', engine);
     localStorage.setItem('searchColor', searchColor);
     localStorage.setItem('clockFormat', clockFormat);
+    localStorage.setItem('useIcon', useIcon);
     localStorage.setItem('chakra-ui-color-mode', theme.initialColorMode);
   }, [
     linksArray,
@@ -64,6 +69,7 @@ function App() {
     searchColor,
     bgColor,
     clockFormat,
+    useIcon,
   ]);
 
   return (
@@ -86,7 +92,7 @@ function App() {
           setEngine={setEngine}
           searchColor={searchColor}
         />
-        <Links linksArray={linksArray} />
+        <Links linksArray={linksArray} useIcon={useIcon} />
         <Settings
           linksArray={linksArray}
           setLinksArray={setLinksArray}
@@ -106,6 +112,8 @@ function App() {
           setBgColor={setBgColor}
           clockFormat={clockFormat}
           setClockFormat={setClockFormat}
+          useIcon={useIcon}
+          setUseIcon={setUseIcon}
         />
       </VStack>
     </Box>

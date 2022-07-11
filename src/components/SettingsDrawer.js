@@ -35,6 +35,8 @@ const SettingsDrawer = ({
   setBgColor,
   clockFormat,
   setClockFormat,
+  useIcon,
+  setUseIcon,
 }) => {
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -59,6 +61,8 @@ const SettingsDrawer = ({
               <LinksSettings
                 linksArray={linksArray}
                 setLinksArray={setLinksArray}
+                useIcon={useIcon}
+                setUseIcon={setUseIcon}
               />
             </VStack>
             <WallpaperSettings

@@ -7,10 +7,11 @@ import {
   IconButton,
   UnorderedList,
   Tag,
+  Tooltip,
 } from '@chakra-ui/react';
-import { AddIcon, DeleteIcon } from '@chakra-ui/icons/';
+import { AddIcon, DeleteIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons/';
 
-const AddLinks = ({ linksArray, setLinksArray }) => {
+const AddLinks = ({ linksArray, setLinksArray, useIcon, setUseIcon }) => {
   const generatedId = Math.floor(Math.random() * 1000);
   const linkPattern = new RegExp(
     '^(https?:\\/\\/)?' + // protocol
@@ -38,7 +39,10 @@ const AddLinks = ({ linksArray, setLinksArray }) => {
 
   function addLink() {
     if (!!linkPattern.test(linkEntry)) {
-      setLinksArray(prev => [...prev, { url: linkEntry, id: generatedId }]);
+      setLinksArray(prev => [
+        ...prev,
+        { url: linkEntry, id: generatedId, useIcon: useIcon },
+      ]);
       setLinkEntry('');
     } else {
       return null;
@@ -71,6 +75,14 @@ const AddLinks = ({ linksArray, setLinksArray }) => {
     </Tag>
   ));
 
+  // Change icon visibilty
+  function iconVisibilty() {
+    setUseIcon(prev => !prev);
+    setLinksArray(current =>
+      current.map(obj => ({ ...obj, useIcon: useIcon }))
+    );
+  }
+
   return (
     <Stack spacing="2">
       <Heading size="md">Links</Heading>
@@ -81,6 +93,15 @@ const AddLinks = ({ linksArray, setLinksArray }) => {
           onKeyDown={handleKeyDown}
           placeholder="Add Link"
         ></Input>
+        <Tooltip
+          label={useIcon ? 'Hide Icons' : 'Show Icons'}
+          placement="top"
+          hasArrow
+        >
+          <IconButton onClick={iconVisibilty}>
+            {useIcon ? <ViewIcon /> : <ViewOffIcon />}
+          </IconButton>
+        </Tooltip>
         <IconButton onClick={addLink}>
           <AddIcon />
         </IconButton>

@@ -1,7 +1,17 @@
 import React from 'react';
-import { HStack, IconButton, Box } from '@chakra-ui/react';
+import { HStack, IconButton, Box, Image } from '@chakra-ui/react';
 
-const Links = ({ linksArray }) => {
+const LinkInitial = ({ link }) => {
+  return (
+    <Box>
+      {Array.from(
+        link.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('.')[0]
+      )[0].toUpperCase()}
+    </Box>
+  );
+};
+
+const Links = ({ linksArray, useIcon }) => {
   const itemArray = linksArray.map(link => (
     <a
       key={link.id}
@@ -13,11 +23,14 @@ const Links = ({ linksArray }) => {
       style={{ margin: '0' }}
     >
       <IconButton variant="outline" size="lg" borderWidth="2px" key={link.id}>
-        <Box>
-          {Array.from(
-            link.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, '').split('.')[0]
-          )[0].toUpperCase()}
-        </Box>
+        {useIcon ? (
+          <Image
+            src={`https://icon.horse/icon/${link.url}`}
+            boxSize="60%"
+          ></Image>
+        ) : (
+          <LinkInitial link={link} />
+        )}
       </IconButton>
     </a>
   ));
