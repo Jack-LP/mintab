@@ -36,6 +36,7 @@ const SearchBar = ({ engine, setEngine, searchColor }) => {
         />
         <Input
           placeholder="Search"
+          _placeholder={{ color: 'white' }}
           size="lg"
           variant="flushed"
           name="q"
