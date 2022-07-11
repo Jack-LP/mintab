@@ -15,7 +15,7 @@ function App() {
 
   const [wallpaper, setWallpaper] = useState(
     localStorage.getItem('wallpaperStorage') ||
-      'https://i.imgur.com/IJyn5do.jpg'
+      'https://i.imgur.com/sdi5CrG.jpg'
   );
 
   const [bgColor, setBgColor] = useState(

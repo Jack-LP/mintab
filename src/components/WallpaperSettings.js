@@ -10,6 +10,7 @@ import {
   Box,
 } from '@chakra-ui/react';
 import { AddIcon, DeleteIcon, DownloadIcon } from '@chakra-ui/icons/';
+import { saveAs } from 'file-saver';
 import CustomSlider from './CustomSlider';
 import ColorSelect from './ColorSelect';
 
@@ -56,6 +57,10 @@ const AddWallpaper = ({
     }
   }
 
+  function saveWallpaper() {
+    saveAs(wallpaper, 'mintab-wallpaper');
+  }
+
   return (
     <Stack spacing="2">
       <Heading size="md">Wallpaper</Heading>
@@ -92,15 +97,14 @@ const AddWallpaper = ({
             />
           </Box>
           <Box display="flex" gap="2" w="100%">
-            <a
-              href={`http://localhost:3000/mintab/${wallpaper}`}
-              download="mintab-wallpaper"
-              style={{ width: '100%' }}
+            <IconButton
+              variant="outline"
+              w="100%"
+              bg="transparent"
+              onClick={saveWallpaper}
             >
-              <IconButton variant="outline" w="100%" bg="transparent">
-                <DownloadIcon />
-              </IconButton>
-            </a>
+              <DownloadIcon />
+            </IconButton>
             <IconButton
               variant="outline"
               w="100%"
