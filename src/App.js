@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, VStack } from '@chakra-ui/react';
-import theme from './theme';
+import theme from './lib/theme';
 import Wallpaper from './components/Wallpaper';
 import Clock from './components/Clock';
 import SearchBar from './components/SearchBar';
@@ -38,7 +38,7 @@ function App() {
   );
 
   const [useIcon, setUseIcon] = useState(
-    localStorage.getItem('useIcon') || false
+    JSON.parse(localStorage.getItem('useIcon') || 'false')
   );
 
   const [username, setUsername] = useState(
@@ -54,7 +54,7 @@ function App() {
   );
 
   // Store settings in local storage
-  localStorage.setItem('chakra-ui-color-mode', theme.initialColorMode);
+  localStorage.setItem('chakra-ui-color-mode', theme.config.initialColorMode);
   localStorage.setItem('wallpaperStorage', wallpaper);
   localStorage.setItem('bgColorStorage', bgColor);
   localStorage.setItem('brightness', brightness);

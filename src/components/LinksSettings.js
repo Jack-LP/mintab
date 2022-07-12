@@ -88,7 +88,7 @@ const AddLinks = ({ linksArray, setLinksArray, useIcon, setUseIcon }) => {
           placement="top"
           hasArrow
         >
-          <IconButton onClick={() => setUseIcon(prev => !prev)}>
+          <IconButton onClick={() => setUseIcon(current => !current)}>
             {useIcon ? <ViewIcon /> : <ViewOffIcon />}
           </IconButton>
         </Tooltip>
