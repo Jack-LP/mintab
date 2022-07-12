@@ -14,8 +14,8 @@
 	<li><a href="#live-site">Live site</a></li>
 	<li><a href="#built-with">Built With</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -23,7 +23,7 @@
 
 ## About mintab
 
-![site-screenshot](https://i.imgur.com/4HNCniv.png)
+![site-screenshot](https://i.imgur.com/b7mKfAn.png)
 
 The purpose of mintab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox. Inspired by [Tabliss](https://github.com/joelshepherd/tabliss)
 
@@ -48,7 +48,7 @@ The purpose of mintab is to act as a customisable homepage for your browser, pro
 
 ## Usage
 
-<img src="https://i.imgur.com/2VmEEMW.png">
+<img src="https://i.imgur.com/Yj5trzY.png">
 The settings drawer contains the ability to:
 
 - Add or remove quick links
@@ -56,18 +56,6 @@ The settings drawer contains the ability to:
 - Set a custom greeting to appear below the clock
 - Switch between search engines
 - Modify the color of the search input
-
-<img src="https://i.imgur.com/bgvwON2.png">
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
-## Contact
-
-Jack Paget - <a href="mailto:jackpaget1@gmail.com">jackpaget1@gmail.com</a>
-
-Project Link: [mintab](https://github.com/Jack-LP/mintab)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -80,5 +68,17 @@ Project Link: [mintab](https://github.com/Jack-LP/mintab)
 - [Chakra UI](https://chakra-ui.com/)
 - [react-colorful](https://www.npmjs.com/package/react-colorful)
 - [react-simple-icons](https://www.npmjs.com/package/@icons-pack/react-simple-icons)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<img src="https://i.imgur.com/zEYhhUZ.png">
+
+<!-- CONTACT -->
+
+## Contact
+
+Jack Paget - <a href="mailto:jackpaget1@gmail.com">jackpaget1@gmail.com</a>
+
+Project Link: [mintab](https://github.com/Jack-LP/mintab)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
