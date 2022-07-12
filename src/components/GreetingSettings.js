@@ -30,7 +30,7 @@ const GreetingSettings = ({ username, setUsername }) => {
   return (
     <VStack spacing="2" alignItems="flex-start">
       <Heading size="md">Greeting</Heading>
-      <FormControl display="flex" gap="4">
+      <FormControl display="flex" gap="2">
         <Input
           value={usernameEntry}
           placeholder="Enter name"

@@ -65,7 +65,7 @@ const AddWallpaper = ({
     <Stack spacing="2">
       <Heading size="md">Wallpaper</Heading>
       <Stack spacing={wallpaper === '' ? '2' : '4'}>
-        <FormControl display="flex" gap="4">
+        <FormControl display="flex" gap="2">
           <Input
             value={wallpaperEntry}
             placeholder="Link to Image"

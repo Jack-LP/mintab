@@ -59,6 +59,7 @@ const AddLinks = ({ linksArray, setLinksArray, useIcon, setUseIcon }) => {
       alignItems="center"
       justifyContent="space-between"
       py="1"
+      pl="5"
     >
       {link.url}
       <IconButton
@@ -75,7 +76,7 @@ const AddLinks = ({ linksArray, setLinksArray, useIcon, setUseIcon }) => {
   return (
     <Stack spacing="2">
       <Heading size="md">Links</Heading>
-      <FormControl display="flex" gap="4">
+      <FormControl display="flex" gap="2">
         <Input
           value={linkEntry}
           onChange={linkChange}
