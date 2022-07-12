@@ -6,6 +6,7 @@ import {
   DrawerBody,
   VStack,
   Box,
+  Button,
 } from '@chakra-ui/react';
 import { ReactComponent as Logo } from '../img/mintab-light.svg';
 import LinksSettings from './LinksSettings';
@@ -13,6 +14,7 @@ import WallpaperSettings from './WallpaperSettings';
 import GreetingSettings from './GreetingSettings';
 import SearchBarSettings from './SearchBarSettings';
 import ClockSettings from './ClockSettings';
+import DefaultSettings from './DefaultSettings';
 
 const SettingsDrawer = ({
   isOpen,
@@ -86,6 +88,7 @@ const SettingsDrawer = ({
               searchColor={searchColor}
               setSearchColor={setSearchColor}
             />
+            <DefaultSettings />
           </Stack>
         </DrawerBody>
       </DrawerContent>
