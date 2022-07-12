@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/mintab/static/js/main.e3c278fb.js",
+    "main.js": "/mintab/static/js/main.ad00271b.js",
     "static/js/377.a59e64a9.chunk.js": "/mintab/static/js/377.a59e64a9.chunk.js",
     "static/media/mintab-light.svg": "/mintab/static/media/mintab-light.29d1ebad42354c0a30a7efd37b79c4cb.svg",
     "index.html": "/mintab/index.html",
-    "main.e3c278fb.js.map": "/mintab/static/js/main.e3c278fb.js.map",
+    "main.ad00271b.js.map": "/mintab/static/js/main.ad00271b.js.map",
     "377.a59e64a9.chunk.js.map": "/mintab/static/js/377.a59e64a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.e3c278fb.js"
+    "static/js/main.ad00271b.js"
   ]
 }
