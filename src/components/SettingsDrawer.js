@@ -6,7 +6,6 @@ import {
   DrawerBody,
   VStack,
   Box,
-  Button,
 } from '@chakra-ui/react';
 import { ReactComponent as Logo } from '../img/mintab-light.svg';
 import LinksSettings from './LinksSettings';
