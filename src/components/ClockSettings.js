@@ -1,7 +1,13 @@
 import React from 'react';
 import { Stack, Heading, RadioGroup, Radio } from '@chakra-ui/react';
+import ColorSelect from './ColorSelect';
 
-const ClockSettings = ({ clockFormat, setClockFormat }) => {
+const ClockSettings = ({
+  clockFormat,
+  setClockFormat,
+  clockColor,
+  setClockColor,
+}) => {
   return (
     <Stack spacing="2">
       <Heading size="md">Clock</Heading>
@@ -23,6 +29,11 @@ const ClockSettings = ({ clockFormat, setClockFormat }) => {
           12 Hour
         </Radio>
       </RadioGroup>
+      <ColorSelect
+        color={clockColor}
+        setColor={setClockColor}
+        title={'Clock Color'}
+      />
     </Stack>
   );
 };

@@ -24,6 +24,8 @@ const Settings = ({
   setClockFormat,
   useIcon,
   setUseIcon,
+  clockColor,
+  setClockColor,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -53,6 +55,8 @@ const Settings = ({
         setClockFormat={setClockFormat}
         useIcon={useIcon}
         setUseIcon={setUseIcon}
+        clockColor={clockColor}
+        setClockColor={setClockColor}
       />
     </>
   );

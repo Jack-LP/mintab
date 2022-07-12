@@ -16,9 +16,9 @@ const SearchBar = ({ engine, setEngine, searchColor }) => {
             <IconButton
               children={
                 engine === 'http://google.com/search' ? (
-                  <Google color="#ffffff20" size={28} />
+                  <Google color={`${searchColor}50`} size={28} />
                 ) : (
-                  <Duckduckgo color="#ffffff20" size={28} />
+                  <Duckduckgo color={`${searchColor}50`} size={28} />
                 )
               }
               onClick={() =>
@@ -36,7 +36,7 @@ const SearchBar = ({ engine, setEngine, searchColor }) => {
         />
         <Input
           placeholder="Search"
-          _placeholder={{ color: 'white' }}
+          _placeholder={{ color: `${searchColor}` }}
           size="lg"
           variant="flushed"
           name="q"

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Box, VStack } from '@chakra-ui/react';
 import theme from './theme';
 import Wallpaper from './components/Wallpaper';
@@ -9,10 +9,7 @@ import Settings from './components/Settings';
 import Greeting from './components/Greeting';
 
 function App() {
-  const [linksArray, setLinksArray] = useState(
-    JSON.parse(localStorage.getItem('linkStorage')) || []
-  );
-
+  // Create state for each setting
   const [wallpaper, setWallpaper] = useState(
     localStorage.getItem('wallpaperStorage') ||
       'https://i.imgur.com/sdi5CrG.jpg'
@@ -22,15 +19,31 @@ function App() {
     localStorage.getItem('bgColorStorage') || '#282828'
   );
 
-  const [username, setUsername] = useState(
-    localStorage.getItem('username') || ''
-  );
-
   const [brightness, setBrightness] = useState(
     localStorage.getItem('brightness') || 1
   );
 
   const [blur, setBlur] = useState(localStorage.getItem('blur') || 0);
+
+  const [clockFormat, setClockFormat] = useState(
+    localStorage.getItem('clockFormat') || 'en-GB'
+  );
+
+  const [clockColor, setClockColor] = useState(
+    localStorage.getItem('clockColor') || '#ffffff'
+  );
+
+  const [linksArray, setLinksArray] = useState(
+    JSON.parse(localStorage.getItem('linkStorage')) || []
+  );
+
+  const [useIcon, setUseIcon] = useState(
+    localStorage.getItem('useIcon') || false
+  );
+
+  const [username, setUsername] = useState(
+    localStorage.getItem('username') || ''
+  );
 
   const [engine, setEngine] = useState(
     localStorage.getItem('engine') || 'http://google.com/search'
@@ -40,38 +53,19 @@ function App() {
     localStorage.getItem('searchColor') || '#ffffff'
   );
 
-  const [clockFormat, setClockFormat] = useState(
-    localStorage.getItem('clockFormat') || 'en-GB'
-  );
-
-  const [useIcon, setUseIcon] = useState(
-    localStorage.getItem('useIcon') || true
-  );
-
-  useEffect(() => {
-    localStorage.setItem('linkStorage', JSON.stringify(linksArray));
-    localStorage.setItem('wallpaperStorage', wallpaper);
-    localStorage.setItem('bgColorStorage', bgColor);
-    localStorage.setItem('username', username);
-    localStorage.setItem('brightness', brightness);
-    localStorage.setItem('blur', blur);
-    localStorage.setItem('engine', engine);
-    localStorage.setItem('searchColor', searchColor);
-    localStorage.setItem('clockFormat', clockFormat);
-    localStorage.setItem('useIcon', useIcon);
-    localStorage.setItem('chakra-ui-color-mode', theme.initialColorMode);
-  }, [
-    linksArray,
-    wallpaper,
-    username,
-    brightness,
-    blur,
-    engine,
-    searchColor,
-    bgColor,
-    clockFormat,
-    useIcon,
-  ]);
+  // Store settings in local storage
+  localStorage.setItem('chakra-ui-color-mode', theme.initialColorMode);
+  localStorage.setItem('wallpaperStorage', wallpaper);
+  localStorage.setItem('bgColorStorage', bgColor);
+  localStorage.setItem('brightness', brightness);
+  localStorage.setItem('blur', blur);
+  localStorage.setItem('clockFormat', clockFormat);
+  localStorage.setItem('clockColor', clockColor);
+  localStorage.setItem('linkStorage', JSON.stringify(linksArray));
+  localStorage.setItem('useIcon', useIcon);
+  localStorage.setItem('username', username);
+  localStorage.setItem('engine', engine);
+  localStorage.setItem('searchColor', searchColor);
 
   return (
     <Box
@@ -86,7 +80,7 @@ function App() {
     >
       <Wallpaper wallpaperSrc={wallpaper} brightness={brightness} blur={blur} />
       <VStack>
-        <Clock clockFormat={clockFormat} />
+        <Clock clockFormat={clockFormat} clockColor={clockColor} />
         <Greeting username={username} />
         <SearchBar
           engine={engine}
@@ -115,6 +109,8 @@ function App() {
           setClockFormat={setClockFormat}
           useIcon={useIcon}
           setUseIcon={setUseIcon}
+          clockColor={clockColor}
+          setClockColor={setClockColor}
         />
       </VStack>
     </Box>

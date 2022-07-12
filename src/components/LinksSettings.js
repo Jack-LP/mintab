@@ -39,10 +39,7 @@ const AddLinks = ({ linksArray, setLinksArray, useIcon, setUseIcon }) => {
 
   function addLink() {
     if (!!linkPattern.test(linkEntry)) {
-      setLinksArray(prev => [
-        ...prev,
-        { url: linkEntry, id: generatedId, useIcon: useIcon },
-      ]);
+      setLinksArray(prev => [...prev, { url: linkEntry, id: generatedId }]);
       setLinkEntry('');
     } else {
       return null;
@@ -75,14 +72,6 @@ const AddLinks = ({ linksArray, setLinksArray, useIcon, setUseIcon }) => {
     </Tag>
   ));
 
-  // Change icon visibilty
-  function iconVisibilty() {
-    setUseIcon(prev => !prev);
-    setLinksArray(current =>
-      current.map(obj => ({ ...obj, useIcon: useIcon }))
-    );
-  }
-
   return (
     <Stack spacing="2">
       <Heading size="md">Links</Heading>
@@ -98,7 +87,7 @@ const AddLinks = ({ linksArray, setLinksArray, useIcon, setUseIcon }) => {
           placement="top"
           hasArrow
         >
-          <IconButton onClick={iconVisibilty}>
+          <IconButton onClick={() => setUseIcon(prev => !prev)}>
             {useIcon ? <ViewIcon /> : <ViewOffIcon />}
           </IconButton>
         </Tooltip>

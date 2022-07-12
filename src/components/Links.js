@@ -26,7 +26,8 @@ const Links = ({ linksArray, useIcon }) => {
         {useIcon ? (
           <Image
             src={`https://icon.horse/icon/${link.url}`}
-            boxSize="60%"
+            boxSize="70%"
+            borderRadius="10px"
           ></Image>
         ) : (
           <LinkInitial link={link} />

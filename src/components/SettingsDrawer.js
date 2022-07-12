@@ -37,6 +37,8 @@ const SettingsDrawer = ({
   setClockFormat,
   useIcon,
   setUseIcon,
+  clockColor,
+  setClockColor,
 }) => {
   return (
     <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
@@ -56,6 +58,8 @@ const SettingsDrawer = ({
             <ClockSettings
               clockFormat={clockFormat}
               setClockFormat={setClockFormat}
+              clockColor={clockColor}
+              setClockColor={setClockColor}
             />
             <VStack alignItems="flex-start">
               <LinksSettings
