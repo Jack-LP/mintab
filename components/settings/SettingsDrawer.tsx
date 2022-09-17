@@ -2,10 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import { Drawer, DrawerContent, DrawerBody, Flex } from '@chakra-ui/react';
 import mintabLogo from '../../public/mintab-logo.svg';
+import Bookmarks from './Bookmarks';
 
-type Props = { isOpen; onClose };
-
-const SettingsDrawer = ({ isOpen, onClose }: Props) => {
+const SettingsDrawer = ({
+  isOpen,
+  onClose,
+  bookmarksArray,
+  setBookmarksArray,
+  useIcon,
+  setUseIcon,
+}) => {
   return (
     <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
       <DrawerContent>
@@ -18,7 +24,14 @@ const SettingsDrawer = ({ isOpen, onClose }: Props) => {
         >
           <Image src={mintabLogo} alt='mintab' width='150px' height='30px' />
         </Flex>
-        <DrawerBody>segseg</DrawerBody>
+        <DrawerBody>
+          <Bookmarks
+            bookmarksArray={bookmarksArray}
+            setBookmarksArray={setBookmarksArray}
+            useIcon={useIcon}
+            setUseIcon={setUseIcon}
+          />
+        </DrawerBody>
       </DrawerContent>
     </Drawer>
   );
