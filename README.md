@@ -1,34 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div id="top"></div>
 
-## Getting Started
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <img src="https://i.imgur.com/xrPi7KZ.png" width="400px" />
+</div>
 
-First, run the development server:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#about-mintab">About mintab</a></li>
+	<li><a href="#live-site">Live site</a></li>
+	<li><a href="#built-with">Built With</a></li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<!-- ABOUT THE PROJECT -->
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About mintab
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+![site-screenshot](https://i.imgur.com/b7mKfAn.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The purpose of mintab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox. Inspired by [Tabliss](https://github.com/joelshepherd/tabliss)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Learn More
+<!-- LIVE SITE -->
 
-To learn more about Next.js, take a look at the following resources:
+## Live Site
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[Click here to view the site live](https://jack-lp.github.io/mintab/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Deploy on Vercel
+### Built With
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- React
+- Chakra UI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+
+## Usage
+
+<img src="https://i.imgur.com/Yj5trzY.png">
+The settings drawer contains the ability to:
+
+- Add or remove quick links
+- Set a custom wallpaper, modify brightness & blur
+- Set a custom greeting to appear below the clock
+- Switch between search engines
+- Modify the color of the search input
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+- [GitHub Pages](https://pages.github.com)
+- [React](https://reactjs.org/)
+- [Chakra UI](https://chakra-ui.com/)
+- [react-colorful](https://www.npmjs.com/package/react-colorful)
+- [react-simple-icons](https://www.npmjs.com/package/@icons-pack/react-simple-icons)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<img src="https://i.imgur.com/zEYhhUZ.png">
+
+<!-- CONTACT -->
+
+## Contact
+
+Jack Paget - <a href="mailto:jackpaget1@gmail.com">jackpaget1@gmail.com</a>
+
+Project Link: [mintab](https://github.com/Jack-LP/mintab)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
