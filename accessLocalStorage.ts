@@ -1,6 +1,10 @@
-export const getFromStorage = (key) => {
+export const getFromStorage = (key, parse) => {
   if (typeof window !== 'undefined') {
-    return JSON.parse(window.localStorage.getItem(key));
+    if (parse) {
+      return JSON.parse(window.localStorage.getItem(key));
+    } else {
+      return window.localStorage.getItem(key);
+    }
   }
 };
 
