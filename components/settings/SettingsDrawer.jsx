@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { SettingsIcon } from '@chakra-ui/icons';
 import Bookmarks from './Bookmarks';
+import Background from './Background';
 
 const SettingsDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,8 +49,9 @@ const SettingsDrawer = () => {
           >
             <Image src='/img/mintab-logo.svg' alt='mintab' w='140px' />
           </DrawerHeader>
-          <DrawerBody>
+          <DrawerBody display='flex' flexDirection='column' gap='4' py='4'>
             <Bookmarks />
+            <Background />
           </DrawerBody>
         </DrawerContent>
       </Drawer>

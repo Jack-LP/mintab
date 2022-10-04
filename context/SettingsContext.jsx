@@ -16,10 +16,19 @@ export const SettingsWrapper = ({ children }) => {
     getFromStorage('background', false) || 'https://i.imgur.com/QJRaeyy.jpg'
   );
 
+  const [brightness, setBrightness] = useState(
+    getFromStorage('brightness', false) || 1
+  );
+
+  const [blur, setBlur] = useState(getFromStorage('blur', false) || 0);
+
   useEffect(() => {
     setToStorage('bookmarks', JSON.stringify(bookmarks));
     setToStorage('useIcon', useIcon);
-  }, [bookmarks, useIcon]);
+    setToStorage('background', background);
+    setToStorage('brightness', brightness);
+    setToStorage('blur', blur);
+  }, [bookmarks, useIcon, background, brightness, blur]);
 
   return (
     <SettingsContext.Provider
@@ -30,6 +39,10 @@ export const SettingsWrapper = ({ children }) => {
         setUseIcon,
         background,
         setBackground,
+        brightness,
+        setBrightness,
+        blur,
+        setBlur,
       }}
     >
       {children}
