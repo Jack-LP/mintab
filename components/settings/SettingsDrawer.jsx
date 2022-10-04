@@ -13,6 +13,7 @@ import { SettingsIcon } from '@chakra-ui/icons';
 import Clock from './Clock';
 import Bookmarks from './Bookmarks';
 import Background from './Background';
+import Greeting from './Greeting';
 
 const SettingsDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -49,10 +50,17 @@ const SettingsDrawer = () => {
           >
             <Image src='/img/mintab-logo.svg' alt='mintab' w='140px' />
           </DrawerHeader>
-          <DrawerBody display='flex' flexDirection='column' gap='8' py='4'>
+          <DrawerBody
+            display='flex'
+            flexDirection='column'
+            gap='8'
+            py='4'
+            style={{ scrollbarWidth: 'none' }}
+          >
             <Clock />
             <Bookmarks />
             <Background />
+            <Greeting />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
