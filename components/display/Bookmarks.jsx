@@ -33,7 +33,7 @@ const Bookmarks = () => {
                 src={`https://icon.horse/icon/${bookmark.url}`}
                 boxSize='70%'
                 borderRadius='10px'
-                alt='4'
+                alt=''
               />
             ) : (
               <BookmarkInitial bookmark={bookmark} />
@@ -44,7 +44,11 @@ const Bookmarks = () => {
     );
   }, [bookmarks, useIcon]);
 
-  return <Flex>{bookmarkDisplay}</Flex>;
+  return (
+    <Flex gap='2' maxW='300px' flexWrap='wrap' justifyContent='center'>
+      {bookmarkDisplay}
+    </Flex>
+  );
 };
 
 export default Bookmarks;

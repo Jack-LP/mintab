@@ -12,6 +12,10 @@ export const SettingsWrapper = ({ children }) => {
     getFromStorage('useIcon', false) || 'iconOff'
   );
 
+  const [background, setBackground] = useState(
+    getFromStorage('background', false) || 'https://i.imgur.com/QJRaeyy.jpg'
+  );
+
   useEffect(() => {
     setToStorage('bookmarks', JSON.stringify(bookmarks));
     setToStorage('useIcon', useIcon);
@@ -19,7 +23,14 @@ export const SettingsWrapper = ({ children }) => {
 
   return (
     <SettingsContext.Provider
-      value={{ bookmarks, setBookmarks, useIcon, setUseIcon }}
+      value={{
+        bookmarks,
+        setBookmarks,
+        useIcon,
+        setUseIcon,
+        background,
+        setBackground,
+      }}
     >
       {children}
     </SettingsContext.Provider>

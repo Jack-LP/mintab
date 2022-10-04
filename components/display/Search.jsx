@@ -5,7 +5,7 @@ const Search = () => {
   return (
     <form action='http://google.com/search' target='_self'>
       <Input
-        maxW='300px'
+        minW='270px'
         variant='flushed'
         placeholder='Search'
         name='q'
