@@ -31,8 +31,10 @@ export const SettingsWrapper = ({ children }) => {
   );
 
   const [username, setUsername] = useState(
-    getFromStorage('username', false) || ''
+    getFromStorage('username', false) || 'http://google.com/search'
   );
+
+  const [engine, setEngine] = useState(getFromStorage('engine', false) || '');
 
   useEffect(() => {
     setToStorage('bookmarks', JSON.stringify(bookmarks));
@@ -43,6 +45,7 @@ export const SettingsWrapper = ({ children }) => {
     setToStorage('clockFormat', clockFormat);
     setToStorage('useSeconds', useSeconds);
     setToStorage('username', username);
+    setToStorage('engine', engine);
   }, [
     bookmarks,
     useIcon,
@@ -52,6 +55,7 @@ export const SettingsWrapper = ({ children }) => {
     clockFormat,
     useSeconds,
     username,
+    engine,
   ]);
 
   return (
@@ -73,6 +77,8 @@ export const SettingsWrapper = ({ children }) => {
         setUseSeconds,
         username,
         setUsername,
+        engine,
+        setEngine,
       }}
     >
       {children}
