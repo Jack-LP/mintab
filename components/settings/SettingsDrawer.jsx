@@ -6,11 +6,11 @@ import {
   DrawerOverlay,
   DrawerContent,
   IconButton,
-  Input,
   Image,
   useDisclosure,
 } from '@chakra-ui/react';
 import { SettingsIcon } from '@chakra-ui/icons';
+import Clock from './Clock';
 import Bookmarks from './Bookmarks';
 import Background from './Background';
 
@@ -50,6 +50,7 @@ const SettingsDrawer = () => {
             <Image src='/img/mintab-logo.svg' alt='mintab' w='140px' />
           </DrawerHeader>
           <DrawerBody display='flex' flexDirection='column' gap='8' py='4'>
+            <Clock />
             <Bookmarks />
             <Background />
           </DrawerBody>

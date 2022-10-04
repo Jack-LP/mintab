@@ -22,13 +22,37 @@ export const SettingsWrapper = ({ children }) => {
 
   const [blur, setBlur] = useState(getFromStorage('blur', false) || 0);
 
+  const [clockFormat, setClockFormat] = useState(
+    getFromStorage('clockFormat', false) || 'en-GB'
+  );
+
+  const [useSeconds, setUseSeconds] = useState(
+    getFromStorage('useSeconds', false) || 'secondsOff'
+  );
+
+  const [username, setUsername] = useState(
+    getFromStorage('username', false) || ''
+  );
+
   useEffect(() => {
     setToStorage('bookmarks', JSON.stringify(bookmarks));
     setToStorage('useIcon', useIcon);
     setToStorage('background', background);
     setToStorage('brightness', brightness);
     setToStorage('blur', blur);
-  }, [bookmarks, useIcon, background, brightness, blur]);
+    setToStorage('clockFormat', clockFormat);
+    setToStorage('useSeconds', useSeconds);
+    setToStorage('username', username);
+  }, [
+    bookmarks,
+    useIcon,
+    background,
+    brightness,
+    blur,
+    clockFormat,
+    useSeconds,
+    username,
+  ]);
 
   return (
     <SettingsContext.Provider
@@ -43,6 +67,12 @@ export const SettingsWrapper = ({ children }) => {
         setBrightness,
         blur,
         setBlur,
+        clockFormat,
+        setClockFormat,
+        useSeconds,
+        setUseSeconds,
+        username,
+        setUsername,
       }}
     >
       {children}
