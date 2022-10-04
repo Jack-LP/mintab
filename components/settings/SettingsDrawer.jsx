@@ -49,7 +49,7 @@ const SettingsDrawer = () => {
           >
             <Image src='/img/mintab-logo.svg' alt='mintab' w='140px' />
           </DrawerHeader>
-          <DrawerBody display='flex' flexDirection='column' gap='4' py='4'>
+          <DrawerBody display='flex' flexDirection='column' gap='8' py='4'>
             <Bookmarks />
             <Background />
           </DrawerBody>

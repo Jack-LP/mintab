@@ -77,7 +77,7 @@ const Bookmarks = () => {
 
   return (
     <Flex direction='column' gap='2'>
-      <Heading size='md'>Links</Heading>
+      <Heading size='md'>Bookmarks</Heading>
       <FormControl display='flex' gap='2'>
         <Input
           value={bookmarkEntry}

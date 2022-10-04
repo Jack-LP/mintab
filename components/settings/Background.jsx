@@ -10,7 +10,7 @@ import {
   IconButton,
   useToast,
 } from '@chakra-ui/react';
-import { AddIcon, DeleteIcon, DownloadIcon } from '@chakra-ui/icons';
+import { CheckIcon, DeleteIcon, DownloadIcon } from '@chakra-ui/icons';
 import CustomSlider from './CustomSlider';
 
 const imgPattern = new RegExp(
@@ -66,7 +66,7 @@ const Background = () => {
           onChange={backgroundChange}
           onKeyDown={handleKeyDown}
         />
-        <IconButton icon={<AddIcon />} onClick={addBackground} />
+        <IconButton icon={<CheckIcon />} onClick={addBackground} />
       </FormControl>
       <Tag
         display={background === '' ? 'none' : 'flex'}
