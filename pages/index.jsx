@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { Flex } from '@chakra-ui/react';
-import Search from '../components/display/Search';
 import SettingsDrawer from '../components/settings/SettingsDrawer';
+import Search from '../components/display/Search';
+import Bookmarks from '../components/display/Bookmarks';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <SettingsDrawer />
       <Search />
+      <Bookmarks />
     </Flex>
   );
 }
