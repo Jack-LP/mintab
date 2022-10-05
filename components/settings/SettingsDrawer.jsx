@@ -14,6 +14,7 @@ import Clock from './Clock';
 import Bookmarks from './Bookmarks';
 import Background from './Background';
 import Greeting from './Greeting';
+import Search from './Search';
 
 const SettingsDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -55,10 +56,12 @@ const SettingsDrawer = () => {
             flexDirection='column'
             gap='8'
             py='4'
+            px='4'
             style={{ scrollbarWidth: 'none' }}
           >
             <Clock />
             <Bookmarks />
+            <Search />
             <Background />
             <Greeting />
           </DrawerBody>

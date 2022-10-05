@@ -8,6 +8,7 @@ import {
   Switch,
   FormControl,
   FormLabel,
+  Tag,
 } from '@chakra-ui/react';
 
 const Clock = () => {
@@ -17,18 +18,6 @@ const Clock = () => {
   return (
     <Flex direction='column' gap='2'>
       <Heading size='md'>Clock</Heading>
-      <FormControl display='flex' alignItems='center'>
-        <FormLabel htmlFor='useSeconds'>Use seconds</FormLabel>
-        <Switch
-          id='useSeconds'
-          isChecked={useSeconds === 'secondsOn' ? true : false}
-          onChange={() => {
-            useSeconds === 'secondsOn'
-              ? setUseSeconds('secondsOff')
-              : setUseSeconds('secondsOn');
-          }}
-        />
-      </FormControl>
       <RadioGroup display='flex' gap='4' defaultValue={clockFormat}>
         <Radio
           value='en-GB'
@@ -47,6 +36,28 @@ const Clock = () => {
           12 Hour
         </Radio>
       </RadioGroup>
+      <FormControl>
+        <Tag
+          display='flex'
+          alignItems='center'
+          justifyContent='space-between'
+          py='3'
+          px='5'
+        >
+          <FormLabel htmlFor='useSeconds' m='0'>
+            Use seconds
+          </FormLabel>
+          <Switch
+            id='useSeconds'
+            isChecked={useSeconds === 'secondsOn' ? true : false}
+            onChange={() => {
+              useSeconds === 'secondsOn'
+                ? setUseSeconds('secondsOff')
+                : setUseSeconds('secondsOn');
+            }}
+          />
+        </Tag>
+      </FormControl>
     </Flex>
   );
 };

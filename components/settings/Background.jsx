@@ -74,6 +74,7 @@ const Background = () => {
         w='100%'
         alignItems='center'
         p='2'
+        pt='4'
         gap='2'
       >
         <Flex alignItems='center'>

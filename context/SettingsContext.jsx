@@ -31,7 +31,7 @@ export const SettingsWrapper = ({ children }) => {
   );
 
   const [username, setUsername] = useState(
-    getFromStorage('username', false) || 'http://google.com/search'
+    getFromStorage('username', false) || ''
   );
 
   const [engine, setEngine] = useState(getFromStorage('engine', false) || '');

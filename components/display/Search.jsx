@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import SettingsContext from '../../context/SettingsContext';
 import {
   Input,
@@ -9,7 +9,30 @@ import {
 } from '@chakra-ui/react';
 
 const Search = () => {
+  const [iconDisplay, setIconDisplay] = useState();
   const { engine, setEngine } = useContext(SettingsContext);
+
+  useEffect(() => {
+    setIconDisplay(
+      engine === 'http://google.com/search' ? (
+        <Image
+          src='img/google.svg'
+          alt=''
+          width='30px'
+          filter='invert(1)'
+          opacity='30%'
+        />
+      ) : (
+        <Image
+          src='img/duckduckgo.svg'
+          alt=''
+          width='30px'
+          filter='invert(1)'
+          opacity='30%'
+        />
+      )
+    );
+  }, [engine]);
 
   return (
     <form action={engine} target='_self'>
@@ -29,23 +52,7 @@ const Search = () => {
               )
             }
           >
-            {engine === 'http://google.com/search' ? (
-              <Image
-                src='img/google.svg'
-                alt=''
-                width='30px'
-                filter='invert(1)'
-                opacity='30%'
-              />
-            ) : (
-              <Image
-                src='img/duckduckgo.svg'
-                alt=''
-                width='30px'
-                filter='invert(1)'
-                opacity='30%'
-              />
-            )}
+            {iconDisplay}
           </IconButton>
         </InputRightElement>
         <Input
