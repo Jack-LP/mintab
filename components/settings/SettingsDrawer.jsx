@@ -15,6 +15,7 @@ import Bookmarks from './Bookmarks';
 import Background from './Background';
 import Greeting from './Greeting';
 import Search from './Search';
+import Theme from './Theme';
 import DefaultReset from './DefaultReset';
 
 const SettingsDrawer = () => {
@@ -65,6 +66,7 @@ const SettingsDrawer = () => {
             <Bookmarks />
             <Background />
             <Greeting />
+            <Theme />
             <DefaultReset />
           </DrawerBody>
         </DrawerContent>

@@ -4,29 +4,23 @@ import { Box, Spinner } from '@chakra-ui/react';
 
 const Clock = () => {
   const { clockFormat, useSeconds } = useContext(SettingsContext);
-
-  const [clockState, setClockState] = useState('');
+  const [clockState, setClockState] = useState(null);
 
   useEffect(() => {
-    setInterval(() => {
-      const date = new Date();
-      setClockState(
-        date.toLocaleTimeString(
-          `${clockFormat}`,
-          useSeconds === 'secondsOn'
-            ? {
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-              }
-            : {
-                hour: '2-digit',
-                minute: '2-digit',
-              }
-        )
-      );
-    }, 1000);
-  }, [clockFormat, useSeconds]);
+    updateTime();
+  }, []);
+
+  const updateTime = () => {
+    let time = new Date().toLocaleTimeString(
+      `${clockFormat}`,
+      useSeconds === 'secondsOn'
+        ? { hour: '2-digit', minute: '2-digit', second: '2-digit' }
+        : { hour: '2-digit', minute: '2-digit' }
+    );
+    setClockState(time);
+  };
+
+  setTimeout(updateTime, 1000);
 
   return (
     <Box fontSize='96' mb='-5' fontFamily='mono'>

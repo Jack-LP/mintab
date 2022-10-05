@@ -13,7 +13,7 @@ export const SettingsWrapper = ({ children }) => {
   );
 
   const [background, setBackground] = useState(
-    getFromStorage('background', false) || 'https://i.imgur.com/QJRaeyy.jpg'
+    getFromStorage('background', true) || 'https://i.imgur.com/QJRaeyy.jpg'
   );
 
   const [brightness, setBrightness] = useState(
@@ -43,9 +43,9 @@ export const SettingsWrapper = ({ children }) => {
   );
 
   useEffect(() => {
+    setToStorage('background', JSON.stringify(background));
     setToStorage('bookmarks', JSON.stringify(bookmarks));
     setToStorage('useIcon', useIcon);
-    setToStorage('background', background);
     setToStorage('brightness', brightness);
     setToStorage('blur', blur);
     setToStorage('clockFormat', clockFormat);
@@ -55,8 +55,8 @@ export const SettingsWrapper = ({ children }) => {
     setToStorage('autofocus', autofocus);
   }, [
     bookmarks,
-    useIcon,
     background,
+    useIcon,
     brightness,
     blur,
     clockFormat,

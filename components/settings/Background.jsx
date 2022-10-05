@@ -9,9 +9,16 @@ import {
   Input,
   IconButton,
   useToast,
+  FormLabel,
 } from '@chakra-ui/react';
-import { CheckIcon, DeleteIcon, DownloadIcon } from '@chakra-ui/icons';
+import {
+  CheckIcon,
+  DeleteIcon,
+  DownloadIcon,
+  ExternalLinkIcon,
+} from '@chakra-ui/icons';
 import CustomSlider from './CustomSlider';
+import { saveAs } from 'file-saver';
 
 const imgPattern = new RegExp(
   /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/
@@ -56,18 +63,49 @@ const Background = () => {
     }
   };
 
+  const downloadBackground = () => {
+    saveAs(background, `mintab-wallpaper-${Math.floor(Math.random() * 1000)}`);
+  };
+
   return (
     <Flex direction='column' gap='2'>
       <Heading size='md'>Background</Heading>
-      <FormControl display='flex' gap='2'>
+      <FormControl display='flex' flexDirection='column' gap='2'>
+        <Flex gap='2'>
+          <Input
+            value={backgroundEntry}
+            placeholder='Link to image'
+            onChange={backgroundChange}
+            onKeyDown={handleKeyDown}
+            focusBorderColor='mint.200'
+          />
+          <IconButton icon={<CheckIcon />} onClick={addBackground} />
+        </Flex>
+        <FormLabel
+          htmlFor='customImageUpload'
+          m='0'
+          textAlign='center'
+          bg='glass.100'
+          p='2'
+          rounded='md'
+          display='flex'
+          gap='2'
+          justifyContent='center'
+          alignItems='center'
+          cursor='pointer'
+        >
+          <ExternalLinkIcon />
+          Upload
+        </FormLabel>
         <Input
-          value={backgroundEntry}
-          placeholder='Link to image'
-          onChange={backgroundChange}
-          onKeyDown={handleKeyDown}
-          focusBorderColor='mint.200'
+          hidden
+          id='customImageUpload'
+          type='file'
+          accept='image/png, image/gif, image/jpeg, image/webp'
+          onChange={(e) => {
+            setBackground(e.target.files[0]);
+          }}
         />
-        <IconButton icon={<CheckIcon />} onClick={addBackground} />
       </FormControl>
       <Tag
         display={background === '' ? 'none' : 'flex'}
@@ -80,7 +118,11 @@ const Background = () => {
       >
         <Flex alignItems='center'>
           <Image
-            src={background}
+            src={
+              typeof background === 'string'
+                ? background
+                : URL.createObjectURL(background)
+            }
             alt='Background preview'
             borderRadius='12px'
             w='250px'
@@ -92,7 +134,7 @@ const Background = () => {
           <IconButton
             variant='outline'
             bg='transparent'
-            onClick={() => setBackground('')}
+            onClick={downloadBackground}
             icon={<DownloadIcon />}
             w='100%'
           />
