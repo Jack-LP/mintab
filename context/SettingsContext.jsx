@@ -5,7 +5,7 @@ const SettingsContext = createContext();
 
 export const SettingsWrapper = ({ children }) => {
   const [bookmarks, setBookmarks] = useState(
-    getFromStorage('bookmarks', true) || ['youtube.com', 'twitter.com']
+    getFromStorage('bookmarks', true) || []
   );
 
   const [useIcon, setUseIcon] = useState(
@@ -34,7 +34,13 @@ export const SettingsWrapper = ({ children }) => {
     getFromStorage('username', false) || ''
   );
 
-  const [engine, setEngine] = useState(getFromStorage('engine', false) || '');
+  const [autofocus, setAutofocus] = useState(
+    getFromStorage('autofocus', false) || 'autofocusOn'
+  );
+
+  const [engine, setEngine] = useState(
+    getFromStorage('engine', false) || 'http://google.com/search'
+  );
 
   useEffect(() => {
     setToStorage('bookmarks', JSON.stringify(bookmarks));
@@ -46,6 +52,7 @@ export const SettingsWrapper = ({ children }) => {
     setToStorage('useSeconds', useSeconds);
     setToStorage('username', username);
     setToStorage('engine', engine);
+    setToStorage('autofocus', autofocus);
   }, [
     bookmarks,
     useIcon,
@@ -56,6 +63,7 @@ export const SettingsWrapper = ({ children }) => {
     useSeconds,
     username,
     engine,
+    autofocus,
   ]);
 
   return (
@@ -79,6 +87,8 @@ export const SettingsWrapper = ({ children }) => {
         setUsername,
         engine,
         setEngine,
+        autofocus,
+        setAutofocus,
       }}
     >
       {children}

@@ -40,6 +40,7 @@ const Greeting = () => {
           onChange={usernameChange}
           onKeyDown={handleKeyDown}
           maxLength={10}
+          focusBorderColor='mint.200'
         ></Input>
         <IconButton onClick={addUsername} icon={<CheckIcon />} />
       </FormControl>

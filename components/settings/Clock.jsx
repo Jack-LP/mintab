@@ -18,7 +18,12 @@ const Clock = () => {
   return (
     <Flex direction='column' gap='2'>
       <Heading size='md'>Clock</Heading>
-      <RadioGroup display='flex' gap='4' defaultValue={clockFormat}>
+      <RadioGroup
+        display='flex'
+        gap='4'
+        defaultValue={clockFormat}
+        colorScheme='mint'
+      >
         <Radio
           value='en-GB'
           onChange={() => {
@@ -48,6 +53,7 @@ const Clock = () => {
             Use seconds
           </FormLabel>
           <Switch
+            colorScheme='mint'
             id='useSeconds'
             isChecked={useSeconds === 'secondsOn' ? true : false}
             onChange={() => {

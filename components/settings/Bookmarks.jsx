@@ -84,7 +84,11 @@ const Bookmarks = () => {
           onChange={bookmarkChange}
           onKeyDown={handleKeyDown}
           placeholder='Add Link'
+          focusBorderColor='mint.200'
         />
+        <IconButton onClick={addBookmark}>
+          <AddIcon />
+        </IconButton>
         <Tooltip
           label={useIcon === 'iconOn' ? 'Hide Icons' : 'Show Icons'}
           placement='top'
@@ -100,9 +104,6 @@ const Bookmarks = () => {
             {useIcon === 'iconOn' ? <ViewIcon /> : <ViewOffIcon />}
           </IconButton>
         </Tooltip>
-        <IconButton onClick={addBookmark}>
-          <AddIcon />
-        </IconButton>
       </FormControl>
       <Flex gap='2' direction='column'>
         {bookmarksList}

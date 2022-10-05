@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useRef } from 'react';
 import SettingsContext from '../../context/SettingsContext';
 import {
   Input,
@@ -10,7 +10,8 @@ import {
 
 const Search = () => {
   const [iconDisplay, setIconDisplay] = useState();
-  const { engine, setEngine } = useContext(SettingsContext);
+  const inputElement = useRef(null);
+  const { engine, setEngine, autofocus } = useContext(SettingsContext);
 
   useEffect(() => {
     setIconDisplay(
@@ -32,7 +33,11 @@ const Search = () => {
         />
       )
     );
-  }, [engine]);
+
+    if (inputElement && autofocus === 'autofocusOn') {
+      inputElement.current.focus();
+    }
+  }, [engine, autofocus]);
 
   return (
     <form action={engine} target='_self'>
@@ -62,6 +67,8 @@ const Search = () => {
           name='q'
           autoComplete='off'
           size='lg'
+          autoFocus='on'
+          ref={inputElement}
         />
       </InputGroup>
     </form>

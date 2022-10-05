@@ -65,6 +65,7 @@ const Background = () => {
           placeholder='Link to image'
           onChange={backgroundChange}
           onKeyDown={handleKeyDown}
+          focusBorderColor='mint.200'
         />
         <IconButton icon={<CheckIcon />} onClick={addBackground} />
       </FormControl>

@@ -22,6 +22,7 @@ const CustomSlider = ({ value, setValue, heading, background }) => {
         onChange={(v) => setValue(v / 100)}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
+        colorScheme='mint'
       >
         <SliderTrack>
           <SliderFilledTrack />

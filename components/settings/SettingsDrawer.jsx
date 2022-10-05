@@ -15,6 +15,7 @@ import Bookmarks from './Bookmarks';
 import Background from './Background';
 import Greeting from './Greeting';
 import Search from './Search';
+import DefaultReset from './DefaultReset';
 
 const SettingsDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -60,10 +61,11 @@ const SettingsDrawer = () => {
             style={{ scrollbarWidth: 'none' }}
           >
             <Clock />
-            <Bookmarks />
             <Search />
+            <Bookmarks />
             <Background />
             <Greeting />
+            <DefaultReset />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
