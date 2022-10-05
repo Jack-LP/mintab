@@ -9,7 +9,11 @@ const Background = () => {
   useEffect(() => {
     setBackgroundDisplay(
       <Image
-        src={background}
+        src={
+          typeof background === 'string'
+            ? background
+            : URL.createObjectURL(background)
+        }
         alt=''
         objectFit='cover'
         w='100%'
