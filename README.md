@@ -23,7 +23,7 @@
 
 ## About mintab
 
-![site-screenshot](https://i.imgur.com/b7mKfAn.png)
+![site-screenshot](https://i.imgur.com/bllwTyC.jpg)
 
 The purpose of mintab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox. Inspired by [Tabliss](https://github.com/joelshepherd/tabliss)
 
@@ -39,7 +39,7 @@ The purpose of mintab is to act as a customisable homepage for your browser, pro
 
 ### Built With
 
-- React
+- NextJS
 - Chakra UI
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -48,14 +48,14 @@ The purpose of mintab is to act as a customisable homepage for your browser, pro
 
 ## Usage
 
-<img src="https://i.imgur.com/Yj5trzY.png">
+<img src="https://i.imgur.com/y5NptWl.gif">
 The settings drawer contains the ability to:
 
 - Add or remove quick links
 - Set a custom wallpaper, modify brightness & blur
 - Set a custom greeting to appear below the clock
 - Switch between search engines
-- Modify the color of the search input
+- Modify the color of displayed elements
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -63,11 +63,9 @@ The settings drawer contains the ability to:
 
 ## Acknowledgments
 
-- [GitHub Pages](https://pages.github.com)
-- [React](https://reactjs.org/)
+- [Vercel](https://vercel.com)
+- [NextJS](https://nextjs.org/)
 - [Chakra UI](https://chakra-ui.com/)
-- [react-colorful](https://www.npmjs.com/package/react-colorful)
-- [react-simple-icons](https://www.npmjs.com/package/@icons-pack/react-simple-icons)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
