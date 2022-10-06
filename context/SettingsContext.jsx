@@ -13,7 +13,7 @@ export const SettingsWrapper = ({ children }) => {
   );
 
   const [background, setBackground] = useState(
-    getFromStorage('background', true) || 'https://i.imgur.com/QJRaeyy.jpg'
+    getFromStorage('background', true) || 'https://i.imgur.com/XjeVV9f.jpg'
   );
 
   const [brightness, setBrightness] = useState(

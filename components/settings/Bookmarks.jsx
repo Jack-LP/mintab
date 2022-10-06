@@ -40,7 +40,7 @@ const Bookmarks = () => {
   };
 
   const addBookmark = () => {
-    if (!!bookmarkPattern.test(bookmarkEntry)) {
+    if (!!bookmarkPattern.test(bookmarkEntry) && bookmarks.length < 20) {
       setBookmarks((prev) => [
         ...prev,
         { url: bookmarkEntry, id: generatedId },

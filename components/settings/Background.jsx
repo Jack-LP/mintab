@@ -9,14 +9,8 @@ import {
   Input,
   IconButton,
   useToast,
-  FormLabel,
 } from '@chakra-ui/react';
-import {
-  CheckIcon,
-  DeleteIcon,
-  DownloadIcon,
-  ExternalLinkIcon,
-} from '@chakra-ui/icons';
+import { CheckIcon, DeleteIcon, DownloadIcon } from '@chakra-ui/icons';
 import CustomSlider from './CustomSlider';
 import { saveAs } from 'file-saver';
 
@@ -81,34 +75,9 @@ const Background = () => {
           />
           <IconButton icon={<CheckIcon />} onClick={addBackground} />
         </Flex>
-        <FormLabel
-          htmlFor='customImageUpload'
-          m='0'
-          textAlign='center'
-          bg='glass.100'
-          p='2'
-          rounded='md'
-          display='flex'
-          gap='2'
-          justifyContent='center'
-          alignItems='center'
-          cursor='pointer'
-        >
-          <ExternalLinkIcon />
-          Browse
-        </FormLabel>
-        <Input
-          hidden
-          id='customImageUpload'
-          type='file'
-          accept='image/png, image/gif, image/jpeg, image/webp'
-          onChange={(e) => {
-            setBackground(e.target.files[0]);
-          }}
-        />
       </FormControl>
       <Tag
-        display={background === '' ? 'none' : 'flex'}
+        display='flex'
         flexDirection='column'
         w='100%'
         alignItems='center'
@@ -141,7 +110,7 @@ const Background = () => {
           <IconButton
             variant='outline'
             bg='transparent'
-            onClick={() => setBackground('')}
+            onClick={() => setBackground('https://i.imgur.com/XjeVV9f.jpg')}
             icon={<DeleteIcon />}
             w='100%'
           />
