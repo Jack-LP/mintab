@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Image, Box } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import Image from 'next/image';
 import SettingsContext from '../../context/SettingsContext';
 
 const Background = () => {
@@ -9,16 +10,12 @@ const Background = () => {
   useEffect(() => {
     setBackgroundDisplay(
       <Image
-        src={
-          typeof background === 'string'
-            ? background
-            : URL.createObjectURL(background)
-        }
+        src={background}
         alt=''
+        layout='fill'
         objectFit='cover'
-        w='100%'
-        h='100%'
-        filter={`brightness(${brightness}) blur(${blur * 10}px)`}
+        quality='95'
+        style={{ filter: `brightness(${brightness}) blur(${blur * 10}px)` }}
       />
     );
   }, [background, brightness, blur]);

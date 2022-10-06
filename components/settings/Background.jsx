@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react';
 import SettingsContext from '../../context/SettingsContext';
+import Image from 'next/image';
 import {
   Flex,
   Heading,
   Tag,
-  Image,
   FormControl,
   Input,
   IconButton,
@@ -68,7 +68,7 @@ const Background = () => {
         <Flex gap='2'>
           <Input
             value={backgroundEntry}
-            placeholder='Link to image'
+            placeholder='Imgur link'
             onChange={backgroundChange}
             onKeyDown={handleKeyDown}
             focusBorderColor='mint.200'
@@ -87,16 +87,13 @@ const Background = () => {
       >
         <Flex alignItems='center'>
           <Image
-            src={
-              typeof background === 'string'
-                ? background
-                : URL.createObjectURL(background)
-            }
+            src={background}
             alt='Background preview'
-            borderRadius='12px'
-            w='250px'
+            width='250px'
             height='145px'
             objectFit='cover'
+            quality='40'
+            style={{ borderRadius: '12px' }}
           />
         </Flex>
         <Flex gap='2' w='100%'>
