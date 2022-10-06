@@ -12,6 +12,7 @@ export default function Home() {
     <>
       <Head>
         <title>mintab</title>
+        <link rel='icon' href='/favicon.ico?v=2' />
       </Head>
       <Flex
         w='100vw'
