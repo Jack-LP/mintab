@@ -42,6 +42,14 @@ export const SettingsWrapper = ({ children }) => {
     getFromStorage('engine', false) || 'http://google.com/search'
   );
 
+  const [clockColor, setClockColor] = useState(
+    getFromStorage('clockColor', false) || '#ffffff'
+  );
+
+  const [greetingColor, setGreetingColor] = useState(
+    getFromStorage('greetingColor', false) || 'whiteAlpha.700'
+  );
+
   useEffect(() => {
     setToStorage('background', JSON.stringify(background));
     setToStorage('bookmarks', JSON.stringify(bookmarks));
@@ -53,6 +61,8 @@ export const SettingsWrapper = ({ children }) => {
     setToStorage('username', username);
     setToStorage('engine', engine);
     setToStorage('autofocus', autofocus);
+    setToStorage('clockColor', clockColor);
+    setToStorage('greetingColor', greetingColor);
   }, [
     bookmarks,
     background,
@@ -64,6 +74,8 @@ export const SettingsWrapper = ({ children }) => {
     username,
     engine,
     autofocus,
+    clockColor,
+    greetingColor,
   ]);
 
   return (
@@ -89,6 +101,10 @@ export const SettingsWrapper = ({ children }) => {
         setEngine,
         autofocus,
         setAutofocus,
+        clockColor,
+        setClockColor,
+        greetingColor,
+        setGreetingColor,
       }}
     >
       {children}

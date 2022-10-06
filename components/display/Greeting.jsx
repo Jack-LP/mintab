@@ -16,23 +16,23 @@ const calcTime = () => {
 };
 
 const Greeting = () => {
-  const [usernameDisplay, setUsernameDisplay] = useState();
-  const { username } = useContext(SettingsContext);
+  const [greetingDisplay, setGreetingDisplay] = useState();
+  const { username, greetingColor } = useContext(SettingsContext);
 
   useEffect(() => {
-    setUsernameDisplay(username);
-  }, [username]);
+    setGreetingDisplay(
+      <Text
+        maxW='400px'
+        textAlign='center'
+        color={greetingColor}
+        fontSize='24px'
+      >
+        {!username ? null : `${calcTime()}, ${username}`}
+      </Text>
+    );
+  }, [username, greetingColor]);
 
-  return (
-    <Text
-      maxW='400px'
-      textAlign='center'
-      color='whiteAlpha.700'
-      fontSize='24px'
-    >
-      {!usernameDisplay ? null : `${calcTime()}, ${usernameDisplay}`}
-    </Text>
-  );
+  return <>{greetingDisplay}</>;
 };
 
 export default Greeting;

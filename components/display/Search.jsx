@@ -69,7 +69,7 @@ const Search = () => {
           size='lg'
           autoFocus='on'
           ref={inputElement}
-          focusBorderColor='mint.200'
+          focusBorderColor='whiteAlpha.300'
         />
       </InputGroup>
     </form>
