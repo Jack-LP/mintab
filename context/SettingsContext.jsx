@@ -30,6 +30,10 @@ export const SettingsWrapper = ({ children }) => {
     getFromStorage('useSeconds', false) || 'secondsOff'
   );
 
+  const [useAMPM, setUseAMPM] = useState(
+    getFromStorage('useAMPM', false) || 'AMPMOff'
+  );
+
   const [username, setUsername] = useState(
     getFromStorage('username', false) || ''
   );
@@ -58,6 +62,7 @@ export const SettingsWrapper = ({ children }) => {
     setToStorage('blur', blur);
     setToStorage('clockFormat', clockFormat);
     setToStorage('useSeconds', useSeconds);
+    setToStorage('useAMPM', useAMPM);
     setToStorage('username', username);
     setToStorage('engine', engine);
     setToStorage('autofocus', autofocus);
@@ -76,6 +81,7 @@ export const SettingsWrapper = ({ children }) => {
     autofocus,
     clockColor,
     greetingColor,
+    useAMPM,
   ]);
 
   return (
@@ -105,6 +111,8 @@ export const SettingsWrapper = ({ children }) => {
         setClockColor,
         greetingColor,
         setGreetingColor,
+        useAMPM,
+        setUseAMPM,
       }}
     >
       {children}

@@ -95,7 +95,7 @@ const Background = () => {
           cursor='pointer'
         >
           <ExternalLinkIcon />
-          Upload
+          Browse
         </FormLabel>
         <Input
           hidden

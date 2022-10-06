@@ -25,7 +25,7 @@ const Greeting = () => {
         maxW='400px'
         textAlign='center'
         color={greetingColor}
-        fontSize='24px'
+        fontSize='26px'
       >
         {!username ? null : `${calcTime()}, ${username}`}
       </Text>

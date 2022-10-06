@@ -50,6 +50,7 @@ const SettingsDrawer = () => {
             alignItems='center'
             borderBottomWidth='1px'
             padding='6'
+            mb='4'
           >
             <Image src='/img/mintab-logo.svg' alt='mintab' w='140px' />
           </DrawerHeader>
@@ -60,6 +61,7 @@ const SettingsDrawer = () => {
             py='4'
             px='4'
             style={{ scrollbarWidth: 'none' }}
+            mb='4'
           >
             <Clock />
             <Search />
