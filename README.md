@@ -23,7 +23,8 @@
 
 ## About mintab
 
-![site-screenshot](https://i.imgur.com/bllwTyC.jpg)
+![site-screenshot](https://user-images.githubusercontent.com/90701888/204012554-d6753d98-958d-4144-ad1a-a82a17dc222d.jpg)
+
 
 The purpose of mintab is to act as a customisable homepage for your browser, providing quick access to sites. I have plans to release this as a browser extension for both chrome and firefox. Inspired by [Tabliss](https://github.com/joelshepherd/tabliss)
 
