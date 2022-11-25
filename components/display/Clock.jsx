@@ -6,20 +6,14 @@ const Clock = () => {
   const { clockFormat, useSeconds, clockColor, useAMPM } =
     useContext(SettingsContext);
   const [clockState, setClockState] = useState(null);
-  const [clockDisplay, setClockDisplay] = useState(null);
+  const [hydrated, setHydrated] = useState(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
 
   useEffect(() => {
     updateTime();
-    setClockDisplay(
-      <Box fontSize='96' mb='-5' fontFamily='body' color={clockColor}>
-        {!clockState ? (
-          <Spinner size='lg' mb='2.5' color='whiteAlpha.500' />
-        ) : (
-          clockState
-        )}
-      </Box>
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clockColor, clockState]);
 
   const updateTime = () => {
@@ -44,9 +38,19 @@ const Clock = () => {
     setClockState(time);
   };
 
-  setTimeout(updateTime, 1000);
+  setInterval(updateTime, 1000);
 
-  return <>{clockDisplay}</>;
+  return hydrated ? (
+    <>
+      <Box fontSize='96' mb='-5' fontFamily='body' color={clockColor}>
+        {!clockState ? (
+          <Spinner size='lg' mb='2.5' color='whiteAlpha.500' />
+        ) : (
+          clockState
+        )}
+      </Box>
+    </>
+  ) : null;
 };
 
 export default Clock;

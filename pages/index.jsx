@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { SettingsWrapper } from '../context/SettingsContext';
 import { Flex } from '@chakra-ui/react';
 import Background from '../components/display/Background';
 import SettingsDrawer from '../components/settings/SettingsDrawer';
@@ -28,7 +29,9 @@ export default function Home() {
           <Clock />
           <Greeting />
         </Flex>
-        <Search />
+        <SettingsWrapper>
+          <Search />
+        </SettingsWrapper>
         <Bookmarks />
       </Flex>
     </>
