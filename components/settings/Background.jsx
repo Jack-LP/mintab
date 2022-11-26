@@ -9,10 +9,18 @@ import {
   Input,
   IconButton,
   useToast,
+  Button,
+  FormLabel,
 } from '@chakra-ui/react';
-import { CheckIcon, DeleteIcon, DownloadIcon } from '@chakra-ui/icons';
+import {
+  CheckIcon,
+  DeleteIcon,
+  DownloadIcon,
+  ExternalLinkIcon,
+} from '@chakra-ui/icons';
 import CustomSlider from './CustomSlider';
 import { saveAs } from 'file-saver';
+import { E } from '@icons-pack/react-simple-icons';
 
 const imgPattern = new RegExp(
   /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/
@@ -57,6 +65,23 @@ const Background = () => {
     }
   };
 
+  const getBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = (error) => reject(error);
+      reader.readAsDataURL(file);
+    });
+  };
+
+  const imageUpload = (e) => {
+    const file = e.target.files[0];
+    getBase64(file).then((base64) => {
+      localStorage['background'] = base64;
+      setBackground(base64);
+    });
+  };
+
   const downloadBackground = () => {
     saveAs(background, `mintab-wallpaper-${Math.floor(Math.random() * 1000)}`);
   };
@@ -75,6 +100,31 @@ const Background = () => {
           />
           <IconButton icon={<CheckIcon />} onClick={addBackground} />
         </Flex>
+        <FormLabel
+          htmlFor='customImageUpload'
+          m='0'
+          textAlign='center'
+          bg='glass.100'
+          p='2'
+          rounded='md'
+          display='flex'
+          gap='2'
+          justifyContent='center'
+          alignItems='center'
+          cursor='pointer'
+        >
+          <ExternalLinkIcon />
+          Browse
+        </FormLabel>
+        <Input
+          hidden
+          id='customImageUpload'
+          type='file'
+          accept='image/png, image/gif, image/jpeg, image/webp'
+          onChange={(e) => {
+            imageUpload(e);
+          }}
+        />
       </FormControl>
       <Tag
         display='flex'
