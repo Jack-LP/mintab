@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../dest/script.js" defer></script>
+    <link rel="stylesheet" href="../dest/output.css" />
+    <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <title>mintab</title>
+  </head>
+  <body
+    class="flex min-h-screen w-full items-center justify-center font-nunito text-white"
+  >
+    <img
+      src="../img/bg-img.jpg"
+      alt=""
+      class="fixed -z-10 h-screen w-screen object-cover"
+    />
+    <button
+      id="settingsBtn"
+      class="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-md border-[1px]"
+    >
+      <i class="bi bi-gear-fill"></i>
+    </button>
+    <div class="flex flex-col items-center gap-4">
+      <h1 id="clockDisplay" class="text-8xl">00:00</h1>
+      <input
+        type="text"
+        id="searchDisplay"
+        class="w-[240px] border-b-[1px] border-white/10 bg-transparent py-2 pl-1 outline-none"
+        placeholder="Search"
+      />
+    </div>
+    <div
+      id="drawerOverlay"
+      class="absolute hidden h-screen w-screen bg-black/50"
+    >
+      <div
+        id="drawer"
+        class="fixed right-0 flex h-screen w-[320px] flex-col bg-black/20 backdrop-blur-md"
+      >
+        <img src="../img/mintab-logo.svg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>
