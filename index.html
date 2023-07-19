@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="index.js" defer></script>
+    <script src="./index.js" defer></script>
     <link rel="stylesheet" href="output.css" />
     <link rel="shortcut icon" href="favicon.ico?v=2" type="image/x-icon" />
     <link
@@ -38,6 +38,17 @@
         class="w-[240px] border-b-[1px] border-white/10 bg-transparent py-2 pl-1 outline-none"
         placeholder="Search"
       />
+    </div>
+    <div
+      id="drawerOverlay"
+      class="absolute hidden h-screen w-screen bg-black/50"
+    >
+      <div
+        id="drawer"
+        class="fixed right-0 flex h-screen w-[320px] flex-col bg-black/20 backdrop-blur-md"
+      >
+        <img src="./img/mintab-logo.svg" alt="" />
+      </div>
     </div>
   </body>
 </html>
