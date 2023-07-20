@@ -8,5 +8,8 @@
   "scripts": {
     "start": "tsc --watch",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./dest/output.css --watch"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
   }
 }
