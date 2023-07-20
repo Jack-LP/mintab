@@ -1,3 +1,5 @@
+import { SettingsLinks } from './SettingsLinks';
+
 export const SettingsDrawer = ({ showDrawer, setShowDrawer }) => {
   return (
     <div
@@ -10,9 +12,14 @@ export const SettingsDrawer = ({ showDrawer, setShowDrawer }) => {
         onClick={(e) => e.stopPropagation()}
         className={`${
           showDrawer ? 'translate-x-0' : 'translate-x-full'
-        } fixed right-0 top-0 flex h-screen w-[320px] flex-col items-center bg-neutral-800/50 p-2 shadow-lg backdrop-blur-md transition-transform duration-150 ease-out`}
+        } fixed right-0 top-0 flex h-screen w-[320px] flex-col bg-black/20 shadow-lg backdrop-blur-[8px] transition-transform duration-150 ease-out`}
       >
-        SettingsDrawer
+        <div className='flex w-full items-center justify-center border-b-[1px] border-white/10 py-6'>
+          <img className='w-32' src='/img/mintab-logo.svg' alt='' />
+        </div>
+        <div className='flex flex-col p-4'>
+          <SettingsLinks />
+        </div>
       </div>
     </div>
   );

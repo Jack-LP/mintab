@@ -1,5 +1,11 @@
-import { render } from 'preact'
-import { App } from './app.jsx'
-import './index.css'
+import { render } from 'preact';
+import { App } from './app.jsx';
+import { AppWrapper } from './context/AppContext.jsx';
+import './index.css';
 
-render(<App />, document.getElementById('app'))
+render(
+  <AppWrapper>
+    <App />
+  </AppWrapper>,
+  document.getElementById('app')
+);
