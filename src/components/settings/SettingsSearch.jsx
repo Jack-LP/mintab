@@ -29,7 +29,7 @@ export const SettingsSearch = () => {
           <label htmlFor='radioDuck'>DuckDuckGo</label>
         </div>
       </form>
-      <div className='flex items-center justify-between rounded-md bg-neutral-800 p-3'>
+      <div className='flex items-center justify-between rounded-md bg-sky/20 p-3'>
         <p>Autofocus</p>
         <input
           type='checkbox'

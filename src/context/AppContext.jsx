@@ -12,6 +12,7 @@ export const AppWrapper = ({ children }) => {
   const [seconds, setSeconds] = useState();
   const [engine, setEngine] = useState('google');
   const [autoFocus, setAutoFocus] = useState(true);
+  const [greeting, setGreeting] = useState('');
 
   return (
     <AppContext.Provider
@@ -32,6 +33,8 @@ export const AppWrapper = ({ children }) => {
         setEngine,
         autoFocus,
         setAutoFocus,
+        greeting,
+        setGreeting,
       }}
     >
       {children}

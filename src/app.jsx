@@ -4,6 +4,7 @@ import { Wallpaper } from './components/display/Wallpaper';
 import { SettingsBtn } from './components/display/SettingsBtn';
 import { SettingsDrawer } from './components/settings/SettingsDrawer';
 import { Clock } from './components/display/Clock';
+import { Greeting } from './components/display/Greeting';
 import { Search } from './components/display/Search';
 import { Links } from './components/display/Links';
 
@@ -17,6 +18,7 @@ export const App = () => {
         <SettingsBtn showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
         <SettingsDrawer showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
         <Clock />
+        <Greeting />
         <Search />
         <Links />
       </div>

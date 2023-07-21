@@ -6,6 +6,10 @@ export default {
       fontFamily: {
         nunito: ['Nunito'],
       },
+      colors: {
+        sky: '#e2e8f0',
+        mint: '#0fb7a0',
+      },
     },
   },
   plugins: [],

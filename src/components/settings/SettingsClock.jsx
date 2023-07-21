@@ -33,7 +33,7 @@ export const SettingsClock = () => {
           <label htmlFor='radio12'>12 Hour</label>
         </div>
       </form>
-      <div className='flex items-center justify-between rounded-md bg-neutral-800 p-3'>
+      <div className='flex items-center justify-between rounded-md bg-sky/20 p-3'>
         <p>Display seconds</p>
         <input type='checkbox' onInput={(e) => setSeconds(e.target.checked)} />
       </div>

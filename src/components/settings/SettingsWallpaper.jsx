@@ -33,12 +33,12 @@ export const SettingsWallpaper = () => {
           onChange={(e) => setInputText(e.target.value)}
           className='w-full rounded-md border-[1px] border-white/10 bg-transparent pl-3 outline-none'
         />
-        <button className='h-10 w-10 rounded-md bg-neutral-800'>
+        <button className='h-10 w-10 rounded-md bg-sky/20'>
           <i class='bi bi-check-lg'></i>
         </button>
       </form>
       <div className={`${wallpaper ? 'flex' : 'hidden'} flex-col gap-2`}>
-        <div className='flex flex-col gap-2 rounded-md bg-neutral-800 p-3'>
+        <div className='flex flex-col gap-2 rounded-md bg-sky/20 p-3'>
           <img src={wallpaper} alt='' className='rounded-md object-cover' />
           <div className='flex justify-between gap-2'>
             <button className='h-10 w-full rounded-md border-[1px] border-white/10 transition-colors duration-150 ease-out hover:bg-white/5'>
