@@ -4,8 +4,6 @@ import { AppContext } from '../../context/AppContext';
 export const Search = () => {
   const { engine, setEngine, autoFocus } = useContext(AppContext);
 
-  console.log(engine);
-
   return (
     <form
       className='flex w-full items-center border-b-[1px] border-white/5'

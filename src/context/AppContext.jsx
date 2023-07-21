@@ -1,18 +1,55 @@
 import { createContext } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
+import { getFromStorage, setToStorage } from '../utilities/localStorage';
 
 export const AppContext = createContext();
 
 export const AppWrapper = ({ children }) => {
-  const [links, setLinks] = useState([]);
-  const [wallpaper, setWallpaper] = useState('');
-  const [brightness, setBrightness] = useState(100);
-  const [blur, setBlur] = useState(0);
-  const [clockFormat, setClockFormat] = useState(24);
-  const [seconds, setSeconds] = useState();
-  const [engine, setEngine] = useState('google');
-  const [autoFocus, setAutoFocus] = useState(true);
-  const [greeting, setGreeting] = useState('');
+  const [links, setLinks] = useState(getFromStorage('links', 'parse') || []);
+  const [wallpaper, setWallpaper] = useState(
+    getFromStorage('wallpaper') || 'https://i.imgur.com/HS4bQaB.jpg'
+  );
+  const [brightness, setBrightness] = useState(
+    getFromStorage('brightness') || 100
+  );
+  const [blur, setBlur] = useState(getFromStorage('blur') || 0);
+  const [clockFormat, setClockFormat] = useState(
+    getFromStorage('clockFormat') || 24
+  );
+  const [seconds, setSeconds] = useState(
+    getFromStorage('seconds') === undefined
+      ? false
+      : getFromStorage('seconds', 'parse')
+  );
+  const [engine, setEngine] = useState(getFromStorage('engine') || 'google');
+  const [autoFocus, setAutoFocus] = useState(
+    getFromStorage('autoFocus') === undefined
+      ? true
+      : getFromStorage('autoFocus', 'parse')
+  );
+  const [greeting, setGreeting] = useState(getFromStorage('greeting') || '');
+
+  useEffect(() => {
+    setToStorage('links', JSON.stringify(links));
+    setToStorage('wallpaper', wallpaper);
+    setToStorage('brightness', brightness);
+    setToStorage('blur', blur);
+    setToStorage('clockFormat', clockFormat);
+    setToStorage('seconds', seconds);
+    setToStorage('engine', engine);
+    setToStorage('autoFocus', autoFocus);
+    setToStorage('greeting', greeting);
+  }, [
+    links,
+    wallpaper,
+    brightness,
+    blur,
+    clockFormat,
+    seconds,
+    engine,
+    autoFocus,
+    greeting,
+  ]);
 
   return (
     <AppContext.Provider

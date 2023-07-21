@@ -1,5 +1,6 @@
 import { useContext, useState } from 'preact/hooks';
 import { AppContext } from '../../context/AppContext';
+import { saveAs } from 'file-saver';
 
 export const SettingsWallpaper = () => {
   const { wallpaper, setWallpaper, brightness, setBrightness, blur, setBlur } =
@@ -14,6 +15,13 @@ export const SettingsWallpaper = () => {
 
   const deleteWallpaper = () => {
     setWallpaper('');
+  };
+
+  const downloadWallpaper = () => {
+    saveAs(
+      wallpaper,
+      `mintab-wallpaper-${Math.floor(Math.random() * Date.now())}`
+    );
   };
 
   const handleRange = (e, filter) => {
@@ -39,9 +47,16 @@ export const SettingsWallpaper = () => {
       </form>
       <div className={`${wallpaper ? 'flex' : 'hidden'} flex-col gap-2`}>
         <div className='flex flex-col gap-2 rounded-md bg-sky/20 p-3'>
-          <img src={wallpaper} alt='' className='rounded-md object-cover' />
+          <img
+            src={wallpaper}
+            alt=''
+            className='h-[140px] w-full rounded-md object-cover'
+          />
           <div className='flex justify-between gap-2'>
-            <button className='h-10 w-full rounded-md border-[1px] border-white/10 transition-colors duration-150 ease-out hover:bg-white/5'>
+            <button
+              onClick={downloadWallpaper}
+              className=' h-10 w-full rounded-md border-[1px] border-white/10 transition-colors duration-150 ease-out hover:bg-white/5'
+            >
               <i class='bi bi-download'></i>
             </button>
             <button

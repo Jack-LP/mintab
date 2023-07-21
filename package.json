@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "file-saver": "^2.0.5",
     "preact": "^10.16.0"
   },
   "devDependencies": {
