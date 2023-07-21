@@ -10,11 +10,11 @@ export const AppWrapper = ({ children }) => {
     getFromStorage('wallpaper') || 'https://i.imgur.com/HS4bQaB.jpg'
   );
   const [brightness, setBrightness] = useState(
-    getFromStorage('brightness') || 100
+    getFromStorage('brightness', 'parse') || 100
   );
-  const [blur, setBlur] = useState(getFromStorage('blur') || 0);
+  const [blur, setBlur] = useState(getFromStorage('blur', 'parse') || 0);
   const [clockFormat, setClockFormat] = useState(
-    getFromStorage('clockFormat') || 24
+    getFromStorage('clockFormat', 'parse') || 24
   );
   const [seconds, setSeconds] = useState(
     getFromStorage('seconds') === undefined
@@ -28,6 +28,8 @@ export const AppWrapper = ({ children }) => {
       : getFromStorage('autoFocus', 'parse')
   );
   const [greeting, setGreeting] = useState(getFromStorage('greeting') || '');
+
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     setToStorage('links', JSON.stringify(links));
@@ -72,6 +74,8 @@ export const AppWrapper = ({ children }) => {
         setAutoFocus,
         greeting,
         setGreeting,
+        showModal,
+        setShowModal,
       }}
     >
       {children}

@@ -14,7 +14,9 @@ export const SettingsWallpaper = () => {
   };
 
   const deleteWallpaper = () => {
-    setWallpaper('');
+    wallpaper !== 'https://i.imgur.com/HS4bQaB.jpg'
+      ? setWallpaper('https://i.imgur.com/HS4bQaB.jpg')
+      : null;
   };
 
   const downloadWallpaper = () => {
@@ -67,7 +69,6 @@ export const SettingsWallpaper = () => {
             </button>
           </div>
         </div>
-
         <div className='flex flex-col'>
           <h3 className='font-bold'>Brightness</h3>
           <input
@@ -75,7 +76,7 @@ export const SettingsWallpaper = () => {
             type='range'
             min={0}
             max={100}
-            defaultValue={100}
+            defaultValue={brightness}
           />
         </div>
         <div className='flex flex-col'>

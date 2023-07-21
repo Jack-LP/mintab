@@ -9,6 +9,7 @@ export default {
       colors: {
         sky: '#e2e8f0',
         mint: '#0fb7a0',
+        glass: '#e2e8f0',
       },
     },
   },

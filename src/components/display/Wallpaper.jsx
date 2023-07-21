@@ -11,7 +11,7 @@ export const Wallpaper = () => {
           filter: `brightness(${brightness / 100}) blur(${blur}px)`,
         }}
         className='h-full w-full object-cover'
-        src={wallpaper ? wallpaper : 'https://picsum.photos/1920/1080'}
+        src={wallpaper}
       />
     </div>
   );
