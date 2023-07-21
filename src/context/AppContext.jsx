@@ -10,6 +10,8 @@ export const AppWrapper = ({ children }) => {
   const [blur, setBlur] = useState(0);
   const [clockFormat, setClockFormat] = useState(24);
   const [seconds, setSeconds] = useState();
+  const [engine, setEngine] = useState('google');
+  const [autoFocus, setAutoFocus] = useState(true);
 
   return (
     <AppContext.Provider
@@ -26,6 +28,10 @@ export const AppWrapper = ({ children }) => {
         setClockFormat,
         seconds,
         setSeconds,
+        engine,
+        setEngine,
+        autoFocus,
+        setAutoFocus,
       }}
     >
       {children}

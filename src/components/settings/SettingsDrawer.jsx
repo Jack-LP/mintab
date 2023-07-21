@@ -1,6 +1,7 @@
+import { SettingsClock } from './SettingsClock';
+import { SettingsSearch } from './SettingsSearch';
 import { SettingsLinks } from './SettingsLinks';
 import { SettingsWallpaper } from './SettingsWallpaper';
-import { SettingsClock } from './SettingsClock';
 
 export const SettingsDrawer = ({ showDrawer, setShowDrawer }) => {
   return (
@@ -21,6 +22,7 @@ export const SettingsDrawer = ({ showDrawer, setShowDrawer }) => {
         </div>
         <div className='flex flex-col gap-8 p-4'>
           <SettingsClock />
+          <SettingsSearch />
           <SettingsLinks />
           <SettingsWallpaper />
         </div>
