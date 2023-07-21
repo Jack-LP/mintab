@@ -8,6 +8,8 @@ export const AppWrapper = ({ children }) => {
   const [wallpaper, setWallpaper] = useState('');
   const [brightness, setBrightness] = useState(100);
   const [blur, setBlur] = useState(0);
+  const [clockFormat, setClockFormat] = useState(24);
+  const [seconds, setSeconds] = useState();
 
   return (
     <AppContext.Provider
@@ -20,6 +22,10 @@ export const AppWrapper = ({ children }) => {
         setBrightness,
         blur,
         setBlur,
+        clockFormat,
+        setClockFormat,
+        seconds,
+        setSeconds,
       }}
     >
       {children}

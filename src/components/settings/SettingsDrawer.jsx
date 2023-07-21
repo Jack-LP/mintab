@@ -1,5 +1,6 @@
 import { SettingsLinks } from './SettingsLinks';
 import { SettingsWallpaper } from './SettingsWallpaper';
+import { SettingsClock } from './SettingsClock';
 
 export const SettingsDrawer = ({ showDrawer, setShowDrawer }) => {
   return (
@@ -19,6 +20,7 @@ export const SettingsDrawer = ({ showDrawer, setShowDrawer }) => {
           <img className='w-32' src='/img/mintab-logo.svg' alt='' />
         </div>
         <div className='flex flex-col gap-8 p-4'>
+          <SettingsClock />
           <SettingsLinks />
           <SettingsWallpaper />
         </div>
