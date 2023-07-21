@@ -10,6 +10,11 @@ export const SettingsLinks = () => {
   const addLink = (e) => {
     e.preventDefault();
     setLinks((prev) => [...prev, { url: inputText, id: uniqueID() }]);
+    setInputText('');
+  };
+
+  const deleteLink = (id) => {
+    setLinks(links.filter((link) => link.id !== id));
   };
 
   return (
@@ -19,6 +24,7 @@ export const SettingsLinks = () => {
         <input
           type='text'
           placeholder='Add Link'
+          value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           className='min-w-0 rounded-md border-[1px] border-white/10 bg-transparent pl-3 outline-none'
         />
@@ -30,9 +36,17 @@ export const SettingsLinks = () => {
         </button>
       </form>
       {links.map((link) => (
-        <div className='flex items-center justify-between rounded-md bg-neutral-700 py-1 pl-5 pr-2'>
-          <p className='text-sm'>{link.url}</p>
-          <button className='h-8 w-8 rounded-md transition-colors duration-150 ease-out hover:bg-neutral-600'>
+        <div
+          key={link.id}
+          className='flex items-center justify-between rounded-md bg-neutral-700 py-1 pl-5 pr-2'
+        >
+          <p className='overflow-hidden overflow-ellipsis whitespace-nowrap text-sm'>
+            {link.url}
+          </p>
+          <button
+            onClick={() => deleteLink(link.id)}
+            className='h-8 w-8 rounded-md transition-colors duration-150 ease-out hover:bg-neutral-600'
+          >
             <i class='bi bi-trash3-fill text-sm'></i>
           </button>
         </div>

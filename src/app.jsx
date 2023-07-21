@@ -5,6 +5,7 @@ import { SettingsBtn } from './components/display/SettingsBtn';
 import { SettingsDrawer } from './components/settings/SettingsDrawer';
 import { Clock } from './components/display/Clock';
 import { Search } from './components/display/Search';
+import { Links } from './components/display/Links';
 
 export const App = () => {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -17,6 +18,7 @@ export const App = () => {
         <SettingsDrawer showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
         <Clock />
         <Search />
+        <Links />
       </div>
     </div>
   );
