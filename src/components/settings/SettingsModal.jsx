@@ -40,7 +40,12 @@ export const SettingsModal = () => {
         <h3 className='text-lg font-bold'>Reset Settings</h3>
         <p>Are you sure you want to return to default settings?</p>
         <div className='flex gap-2 self-end'>
-          <button className='rounded-md bg-white/20 px-3 py-2'>Cancel</button>
+          <button
+            onClick={() => setShowModal(false)}
+            className='rounded-md bg-white/20 px-3 py-2'
+          >
+            Cancel
+          </button>
           <button
             onClick={resetSettings}
             className='rounded-md bg-mint px-3 py-2'
