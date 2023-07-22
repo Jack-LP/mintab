@@ -40,7 +40,7 @@ export const SettingsLinks = () => {
       <form className='flex h-10 gap-2' onSubmit={(e) => addLink(e)}>
         <input
           type='text'
-          placeholder='Add Link'
+          placeholder='Add link'
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           className='fous:border-transparent w-48 rounded-md border-[1px] border-white/10 bg-transparent pl-3 outline-none transition-all duration-200 ease-out focus:ring-2 focus:ring-mint'

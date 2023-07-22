@@ -26,8 +26,10 @@ export const App = () => {
       <Wallpaper />
       <SettingsBtn showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
       <div className='flex flex-col items-center justify-center gap-4'>
-        <Clock />
-        <Greeting />
+        <div className='flex flex-col items-center'>
+          <Clock />
+          <Greeting />
+        </div>
         <Search />
         <Links />
       </div>

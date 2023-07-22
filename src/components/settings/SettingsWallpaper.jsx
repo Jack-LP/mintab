@@ -55,7 +55,7 @@ export const SettingsWallpaper = () => {
           <img
             src={wallpaper}
             alt=''
-            className='h-[140px] w-full rounded-md object-cover'
+            className='aspect-video rounded-md object-cover'
           />
           <div className='flex justify-between gap-2'>
             <button
