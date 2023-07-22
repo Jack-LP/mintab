@@ -38,20 +38,20 @@ export const SettingsWallpaper = () => {
   return (
     <div className='flex flex-col gap-2'>
       <h2 className='text-xl font-bold'>Wallpaper</h2>
-      <form onSubmit={(e) => addWallpaper(e)} className='flex w-full gap-2'>
+      <form onSubmit={(e) => addWallpaper(e)} className='flex h-10 gap-2'>
         <input
           type='text'
           placeholder='Direct link'
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          className='w-full rounded-md border-[1px] border-white/10 bg-transparent pl-3 outline-none'
+          className='fous:border-transparent w-60 rounded-md border-[1px] border-white/10 bg-transparent pl-3 outline-none transition-all duration-200 ease-out focus:ring-2 focus:ring-mint'
         />
-        <button className='h-10 w-10 rounded-md bg-sky/20'>
+        <button className='h-full w-10 rounded-md bg-white/10 transition-colors duration-150 ease-out hover:bg-white/20'>
           <i class='bi bi-check-lg'></i>
         </button>
       </form>
       <div className={`${wallpaper ? 'flex' : 'hidden'} flex-col gap-2`}>
-        <div className='flex flex-col gap-2 rounded-md bg-sky/20 p-3'>
+        <div className='flex flex-col gap-2 rounded-md bg-white/20 p-3'>
           <img
             src={wallpaper}
             alt=''
@@ -72,7 +72,9 @@ export const SettingsWallpaper = () => {
             </button>
           </div>
         </div>
-        <div className='flex flex-col'>
+      </div>
+      <div className='flex flex-col gap-4'>
+        <div className='flex flex-col gap-1'>
           <h3 className='font-bold'>Brightness</h3>
           <input
             onInput={(e) => handleRange(e, 'brightness')}
@@ -80,9 +82,10 @@ export const SettingsWallpaper = () => {
             min={0}
             max={100}
             defaultValue={brightness}
+            className='h-1 cursor-pointer accent-mint'
           />
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col gap-1'>
           <h3 className='font-bold'>Blur</h3>
           <input
             onInput={(e) => handleRange(e, 'blur')}
@@ -90,6 +93,7 @@ export const SettingsWallpaper = () => {
             min={0}
             max={16}
             defaultValue={blur}
+            className='h-1 cursor-pointer accent-mint'
           />
         </div>
       </div>

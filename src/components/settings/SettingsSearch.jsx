@@ -15,6 +15,7 @@ export const SettingsSearch = () => {
             id='radioGoogle'
             name='engine'
             checked={engine === 'google'}
+            className='accent-mint'
           />
           <label htmlFor='radioGoogle'>Google</label>
         </div>
@@ -25,11 +26,12 @@ export const SettingsSearch = () => {
             id='radioDuck'
             name='engine'
             checked={engine === 'duckduckgo'}
+            className='accent-mint'
           />
           <label htmlFor='radioDuck'>DuckDuckGo</label>
         </div>
       </form>
-      <div className='flex items-center justify-between rounded-md bg-sky/20 p-3'>
+      <div className='flex items-center justify-between rounded-md bg-white/20 p-3'>
         <p>Autofocus</p>
         <label className='relative cursor-pointer items-center'>
           <input

@@ -1,3 +1,4 @@
+import { useEffect } from 'preact/hooks';
 import { SettingsClock } from './SettingsClock';
 import { SettingsSearch } from './SettingsSearch';
 import { SettingsLinks } from './SettingsLinks';
@@ -6,6 +7,18 @@ import { SettingsGreeting } from './SettingsGreeting';
 import { SettingsReset } from './SettingsReset';
 
 export const SettingsDrawer = ({ showDrawer, setShowDrawer }) => {
+  useEffect(() => {
+    if (showDrawer) {
+      const keyDownHandler = (e) => {
+        e.key === 'Escape' && setShowDrawer(false);
+      };
+      document.addEventListener('keydown', keyDownHandler);
+      return () => {
+        document.removeEventListener('keydown', keyDownHandler);
+      };
+    }
+  }, [showDrawer]);
+
   return (
     <>
       <div

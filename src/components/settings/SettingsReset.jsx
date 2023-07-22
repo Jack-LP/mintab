@@ -7,7 +7,7 @@ export const SettingsReset = () => {
   return (
     <button
       onClick={() => setShowModal(true)}
-      className='rounded-md bg-sky/20 py-2 font-semibold'
+      className='rounded-md bg-white/20 py-2 font-semibold'
     >
       Reset Settings
     </button>

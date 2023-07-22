@@ -19,6 +19,7 @@ export const SettingsClock = () => {
             id='radio24'
             name='clockFormat'
             checked={clockFormat === 24}
+            className='accent-mint'
           />
           <label htmlFor='radio24'>24 Hour</label>
         </div>
@@ -29,11 +30,12 @@ export const SettingsClock = () => {
             id='radio12'
             name='clockFormat'
             checked={clockFormat === 12}
+            className='accent-mint'
           />
           <label htmlFor='radio12'>12 Hour</label>
         </div>
       </form>
-      <div className='flex items-center justify-between rounded-md bg-sky/20 p-3'>
+      <div className='flex items-center justify-between rounded-md bg-white/20 p-3'>
         <p>Display seconds</p>
         <label className='relative cursor-pointer items-center'>
           <input

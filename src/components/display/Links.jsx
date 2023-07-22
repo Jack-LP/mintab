@@ -3,11 +3,11 @@ import { memo } from 'preact/compat';
 import { AppContext } from '../../context/AppContext';
 
 export const Links = memo(() => {
-  const { links } = useContext(AppContext);
+  const { links, showLinks } = useContext(AppContext);
 
   const getInitial = (str) => str.charAt(0).toUpperCase();
 
-  return (
+  return showLinks !== 'showLinks' ? null : (
     <div className='flex max-w-[275px] flex-wrap gap-2'>
       {links.map((link) => (
         <a

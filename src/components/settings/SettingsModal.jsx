@@ -1,8 +1,20 @@
-import { useContext } from 'preact/hooks';
+import { useContext, useEffect } from 'preact/hooks';
 import { AppContext } from '../../context/AppContext';
 
 export const SettingsModal = () => {
   const { showModal, setShowModal } = useContext(AppContext);
+
+  useEffect(() => {
+    if (showModal) {
+      const keyDownHandler = (e) => {
+        e.key === 'Escape' && setShowModal(false);
+      };
+      document.addEventListener('keydown', keyDownHandler);
+      return () => {
+        document.removeEventListener('keydown', keyDownHandler);
+      };
+    }
+  }, [showModal]);
 
   const resetSettings = () => {
     setShowModal(false);

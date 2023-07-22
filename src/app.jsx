@@ -12,7 +12,7 @@ export const App = () => {
   const [showDrawer, setShowDrawer] = useState(false);
 
   return (
-    <div className='relative flex min-h-screen w-screen items-center justify-center font-nunito text-white'>
+    <div className='relative flex min-h-screen w-screen items-center justify-center overflow-hidden font-nunito text-white'>
       <SettingsDrawer showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
       <SettingsModal />
       <Wallpaper />

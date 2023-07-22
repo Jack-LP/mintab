@@ -28,6 +28,9 @@ export const AppWrapper = ({ children }) => {
       : getFromStorage('autoFocus', 'parse')
   );
   const [greeting, setGreeting] = useState(getFromStorage('greeting') || '');
+  const [showLinks, setShowLinks] = useState(
+    getFromStorage('showLinks') || 'showLinks'
+  );
 
   const [showModal, setShowModal] = useState(false);
 
@@ -41,6 +44,7 @@ export const AppWrapper = ({ children }) => {
     setToStorage('engine', engine);
     setToStorage('autoFocus', autoFocus);
     setToStorage('greeting', greeting);
+    setToStorage('showLinks', showLinks);
   }, [
     links,
     wallpaper,
@@ -51,6 +55,7 @@ export const AppWrapper = ({ children }) => {
     engine,
     autoFocus,
     greeting,
+    showLinks,
   ]);
 
   return (
@@ -76,6 +81,8 @@ export const AppWrapper = ({ children }) => {
         setGreeting,
         showModal,
         setShowModal,
+        showLinks,
+        setShowLinks,
       }}
     >
       {children}
