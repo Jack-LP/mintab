@@ -11,8 +11,8 @@
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#about-mintab">About mintab</a></li>
-	<li><a href="#live-site">Live site</a></li>
-	<li><a href="#built-with">Built With</a></li>
+    <li><a href="#live-site">Live site</a></li>
+    <li><a href="#built-with">Built With</a></li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -39,8 +39,8 @@ The purpose of mintab is to act as a customisable homepage for your browser, pro
 
 ### Built With
 
-- NextJS
-- Chakra UI
+- Preact
+- Tailwind
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -55,7 +55,6 @@ The settings drawer contains the ability to:
 - Set a custom wallpaper, modify brightness & blur
 - Set a custom greeting to appear below the clock
 - Switch between search engines
-- Modify the color of displayed elements
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -64,8 +63,8 @@ The settings drawer contains the ability to:
 ## Acknowledgments
 
 - [Vercel](https://vercel.com)
-- [NextJS](https://nextjs.org/)
-- [Chakra UI](https://chakra-ui.com/)
+- [Preact](https://preactjs.com/)
+- [Tailwind](https://tailwindcss.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
