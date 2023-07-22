@@ -17,7 +17,7 @@ export const App = () => {
       <SettingsModal />
       <Wallpaper />
       <SettingsBtn showDrawer={showDrawer} setShowDrawer={setShowDrawer} />
-      <div className='flex w-[275px] flex-col items-center gap-4'>
+      <div className='flex flex-col items-center justify-center gap-4'>
         <Clock />
         <Greeting />
         <Search />

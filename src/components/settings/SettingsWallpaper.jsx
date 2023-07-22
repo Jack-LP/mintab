@@ -1,6 +1,7 @@
 import { useContext, useState } from 'preact/hooks';
 import { AppContext } from '../../context/AppContext';
 import { saveAs } from 'file-saver';
+import { imageExists } from '../../utilities/imageExists';
 
 export const SettingsWallpaper = () => {
   const { wallpaper, setWallpaper, brightness, setBrightness, blur, setBlur } =
@@ -9,8 +10,10 @@ export const SettingsWallpaper = () => {
 
   const addWallpaper = (e) => {
     e.preventDefault();
-    setWallpaper(inputText);
-    setInputText('');
+    if (imageExists(inputText)) {
+      setWallpaper(inputText);
+      setInputText('');
+    }
   };
 
   const deleteWallpaper = () => {

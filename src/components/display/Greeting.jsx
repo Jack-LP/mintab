@@ -1,7 +1,8 @@
 import { useContext } from 'preact/hooks';
+import { memo } from 'preact/compat';
 import { AppContext } from '../../context/AppContext';
 
-export const Greeting = () => {
+export const Greeting = memo(() => {
   const { greeting } = useContext(AppContext);
 
   const calcTime = () => {
@@ -21,4 +22,4 @@ export const Greeting = () => {
       className={`${!greeting ? 'hidden' : null} text-[26px] text-white/60`}
     >{`${calcTime()}, ${greeting}`}</p>
   );
-};
+});

@@ -1,12 +1,13 @@
 import { useContext } from 'preact/hooks';
+import { memo } from 'preact/compat';
 import { AppContext } from '../../context/AppContext';
 
-export const Search = () => {
+export const Search = memo(() => {
   const { engine, setEngine, autoFocus } = useContext(AppContext);
 
   return (
     <form
-      className='flex w-full items-center border-b-[1px] border-white/5'
+      className='flex w-[275px] items-center border-b-[1px] border-white/5'
       action={`${
         engine === 'google'
           ? 'https://www.google.com/search'
@@ -32,4 +33,4 @@ export const Search = () => {
       />
     </form>
   );
-};
+});

@@ -7,8 +7,10 @@ export const SettingsGreeting = () => {
 
   const addGreeting = (e) => {
     e.preventDefault();
-    setGreeting(inputText);
-    setInputText('');
+    if (inputText.length <= 10) {
+      setGreeting(inputText);
+      setInputText('');
+    }
   };
 
   return (
@@ -18,6 +20,7 @@ export const SettingsGreeting = () => {
         <input
           type='text'
           placeholder='Enter name'
+          maxLength={10}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           className='min-w-0 rounded-md border-[1px] border-white/10 bg-transparent pl-3 outline-none'

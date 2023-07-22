@@ -9,8 +9,19 @@ export const SettingsLinks = () => {
 
   const addLink = (e) => {
     e.preventDefault();
-    setLinks((prev) => [...prev, { url: inputText, id: uniqueID() }]);
-    setInputText('');
+    if (
+      /^(?:(?:https?|ftp):\/\/)?[^\s/$.?#]+\.[^\s]*$/.test(inputText) && // Checks if input is a valid link
+      links.length < 15
+    ) {
+      setLinks((prev) => [
+        ...prev,
+        {
+          url: inputText.includes('http') ? inputText : `https://${inputText}`,
+          id: uniqueID(),
+        },
+      ]);
+      setInputText('');
+    }
   };
 
   const deleteLink = (id) => {
@@ -41,7 +52,8 @@ export const SettingsLinks = () => {
           className='flex items-center justify-between rounded-md bg-sky/20 py-1 pl-5 pr-2'
         >
           <p className='overflow-hidden overflow-ellipsis whitespace-nowrap text-sm'>
-            {link.url}
+            {/* Removes "https://" from url display */}
+            {link.url.replace(/(^\w+:|^)\/\//, '')}
           </p>
           <button
             onClick={() => deleteLink(link.id)}
