@@ -33,7 +33,7 @@ The purpose of mintab is to act as a customisable homepage for your browser, pro
 
 ## Live Site
 
-[Click here to view the site live](https://jack-lp.github.io/mintab/)
+[Click here to view the site live](https://mintab.vercel.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
